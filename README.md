@@ -4,9 +4,7 @@ Aplicación web financiera.
 Katherine García 20190418
 Andrea Reyes 20190265
 
-## Ctrl + Money
-
-## Proyecto:
+## Ctrl + Money:
 Aplicación web financiera donde se puedan añadir gastos mensuales o semanales y se clasifiquen 
 de acuerdo a categorías y cantidades gastadas. 
 
