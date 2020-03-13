@@ -7,6 +7,7 @@
 <body>
 
     <ul>
+<!--        <th:block "${categoriesList}"></th:block>-->
         <th:block th:each="category : ${categoriesList}">
             <li th:text="${category}"></li>
         </th:block>
