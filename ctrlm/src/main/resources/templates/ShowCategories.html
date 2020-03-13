@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:/>/www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title>List of Categories</title>
+</head>
+<body>
+
+    <ul>
+        <th:block th:each="category : ${categoriesList}">
+            <li th:text="${category}"></li>
+        </th:block>
+    </ul>
+
+    <form action = '/index'>
+        <input type='submit' value = 'Add more!' />
+    </form>
+
+</body>
+</html>

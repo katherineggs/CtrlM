@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:/>/www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Categories</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+</head>
+
+<body>
+
+    <form action = '/getcategories'>
+        <h2>Create your categories:</h2>
+        <label>Name:</label><br>
+        <div id="items">
+           <div><input type="text" name="name" /></div><br>
+        </div>
+
+        <input type="submit" value="Done" />
+    </form>
+    <button id="add">Add</button><br>
+
+    <script>
+        $(document).ready(function() {
+            $("#add").click(function (e) {
+                //Append a new row of code to the "#items" div
+                $("#items").append('<div><input type="text" name="name" /></div>'); });
+        });
+    </script>
+
+</body>
+</html>
