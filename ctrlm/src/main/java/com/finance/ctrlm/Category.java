@@ -21,23 +21,19 @@ public class Category {
 
     //Method to add the categories to the list
     public static void addCategory(String name, Model model){
+        Boolean firstRound = true;
         String[] temp = categoriesList;
         String[] NewCategory = name.split(",");
         size += NewCategory.length;
         categoriesList = new String[size];
 
         for(int i = 0; i < size - NewCategory.length; i ++) {
-            cont --;
-            categoriesList[cont] = temp[i];
-            cont++;
+            categoriesList[i] = temp[i];
         }
         for(int iN = 0; iN < NewCategory.length; iN++) {
             categoriesList[cont] = NewCategory[iN];
             cont++;
         }
-        System.out.println(Arrays.toString(NewCategory));
-        System.out.println(Arrays.toString(categoriesList));
-
         model.addAttribute("categoriesList", categoriesList);
     }
 }
