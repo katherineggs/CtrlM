@@ -14,7 +14,7 @@ public class App {
     public String Add(@RequestParam String name, Model model){
         Main.NewCategory(name, model);
 
-        return "ShowCategories";
+        return "GetExpenses";
     }
 
     @GetMapping("index")
@@ -23,10 +23,10 @@ public class App {
         return "GetCategories";
     }
 
-    @GetMapping("showcategories")
-    public String showc(){
+    @GetMapping("expenses")
+    public String inputExpenses(){
 
-        return "ShowCategories";
+        return "GetExpenses";
     }
 
 }

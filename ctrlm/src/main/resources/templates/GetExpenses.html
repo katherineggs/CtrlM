@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:/>/www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Expenses</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+    <select name="Categories">
+        <option>Category</option>
+
+        <th:block th:each="category : ${categoriesList}">
+            <option th:text="${category}"></option>
+        </th:block>
+
+    </select>
+
+</body>
+</html>

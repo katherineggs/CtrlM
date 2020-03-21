@@ -13,7 +13,6 @@ public class Category {
 
 
     //List to save the categories entered
-//    static List<String> categoriesList = new ArrayList<>();
     static int size = 0;
     static int cont = 0;
     static String categoriesList [] = new String[size];
