@@ -9,6 +9,12 @@ import org.springframework.ui.Model;
 @Controller
 public class App {
 
+    @GetMapping("index")
+    public String index(){
+
+        return "GetCategories";
+    }
+
     //Para
     @GetMapping("getcategories")
     public String Add(@RequestParam String name, Model model){
@@ -17,11 +23,6 @@ public class App {
         return "GetExpenses";
     }
 
-    @GetMapping("index")
-    public String index(){
-
-        return "GetCategories";
-    }
 
     @GetMapping("expenses")
     public String inputExpenses(){

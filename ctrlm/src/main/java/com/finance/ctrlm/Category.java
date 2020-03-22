@@ -8,9 +8,15 @@ import org.springframework.ui.Model;
 
 public class Category {
     //Attributes
-    int Times;
-    int SpentMoney;
+    static String Name;
+    static int Times;
+    static int SpentMoney;
 
+    //Constructor
+    Category(String name){
+        Name = name;
+
+    }
 
     //List to save the categories entered
     static int size = 0;
@@ -35,4 +41,15 @@ public class Category {
         }
         model.addAttribute("categoriesList", categoriesList);
     }
+
+    public static String GetName(){
+        System.out.println(Name);
+        return Name;
+    }
+
+
+    //Method to classify expenses (assign values to the object)
+
+
+
 }

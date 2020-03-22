@@ -7,14 +7,23 @@
 </head>
 
 <body>
-    <select name="Categories">
-        <option>Category</option>
 
-        <th:block th:each="category : ${categoriesList}">
-            <option th:text="${category}"></option>
-        </th:block>
+    <form action = '/expenses'>
+        <select name="Categories">
+            <option>Category</option>
 
-    </select>
+            <th:block th:each="category : ${categoriesList}">
+                <option th:text="${category}"></option>
+            </th:block>
+
+        </select>
+
+        <br><label>GTQ:</label><br>
+        <input type="text" name="amount" />
+
+        <input type="submit" value="Add expense"/>
+    </form>
+
 
 </body>
 </html>
