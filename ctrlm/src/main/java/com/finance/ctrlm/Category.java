@@ -63,28 +63,29 @@ public class Category {
     //Method to create the object and save it in the list
     public static void CreateObject(){
 
-        Category tempObjects[] = objectsList;
+
         sizeOfObjectList += categoriesList.length;
         objectsList = new Category[sizeOfObjectList];
+        Category tempObjects[] = objectsList;
 
-        for(int i = 0; i < sizeOfObjectList - categoriesList.length; i++){
-            objectsList[i] = tempObjects[i];
+        System.out.println("\n\n 1ER PRINT");
+        for(int newObj = 0; newObj < objectsList.length; newObj++){
+            tempObjects[newObj] = new Category(categoriesList[newObj]);
+            objectsList[newObj] = tempObjects [newObj];
+            System.out.println(objectsList[newObj].Name);
 
         }
 
-        for(int j = 0; j < objectsList.length ; j++){
-            objectsList[j] = new Category(categoriesList[j]);
-            System.out.println(objectsList[j].Name);
+        System.out.println("\n\n2DO PRINTT");
+        for(int ver = 0; ver < objectsList.length; ver++){
+            System.out.println(objectsList[ver].Name);
         }
 
 
-        //IMPRIME (SOLO PARA VER SI FUNCIONA)
-        System.out.println("\n\naqui empieza el segundo print");
-        for(int x = 0; x < objectsList.length; x++){
-            System.out.println(objectsList[x].Name);
-        }
-        System.out.println("\naqui termina el segundo print\n");
+
     }
+
+
 
     //Method to assign values to the object
 
