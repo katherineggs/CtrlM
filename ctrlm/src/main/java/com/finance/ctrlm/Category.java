@@ -36,8 +36,19 @@ public class Category {
             categoriesList[i] = temp[i];
         }
         for(int iN = 0; iN < NewCategory.length; iN++) {
-            categoriesList[cont] = NewCategory[iN];
-            cont++;
+            for(int a = 0; a <NewCategory.length; a++){
+                if(temp.length != 0){
+                    if(!NewCategory[iN].equals(temp[a])) {
+                        categoriesList[cont] = NewCategory[iN];
+                    }
+                    else{
+                        cont --;
+                    }
+                } else{
+                    categoriesList[cont] = NewCategory[iN];
+                }
+            }
+            cont ++;
         }
         model.addAttribute("categoriesList", categoriesList);
     }
@@ -72,7 +83,7 @@ public class Category {
         for(int x = 0; x < objectsList.length; x++){
             System.out.println(objectsList[x].Name);
         }
-
+        System.out.println("\naqui termina el segundo print\n");
     }
 
     //Method to assign values to the object
