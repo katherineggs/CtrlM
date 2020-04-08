@@ -58,30 +58,24 @@ public class Category {
     static int cont2 = 0;
     static Category objectsList [] = new Category[sizeOfObjectList];
 
-    //static Category objectsList [] = Arrays.copyOf(Category.categoriesList,Category.categoriesList.length,Category[].class);
-
     //Method to create the object and save it in the list
     public static void CreateObject(){
 
-
         sizeOfObjectList += categoriesList.length;
         objectsList = new Category[sizeOfObjectList];
-        Category tempObjects[] = objectsList;
 
         System.out.println("\n\n 1ER PRINT");
-        for(int newObj = 0; newObj < objectsList.length; newObj++){
-            tempObjects[newObj] = new Category(categoriesList[newObj]);
-            objectsList[newObj] = tempObjects [newObj];
+        for(int newObj = 0; newObj < categoriesList.length; newObj++){
+            objectsList[newObj] = new Category(categoriesList[cont2]);
+            cont2++;
             System.out.println(objectsList[newObj].Name);
-
-        }
-
-        System.out.println("\n\n2DO PRINTT");
-        for(int ver = 0; ver < objectsList.length; ver++){
-            System.out.println(objectsList[ver].Name);
         }
 
 
+        System.out.println("\n\n 2do PRINT");
+        for(int x = 0; x < objectsList.length; x++){
+            System.out.println(objectsList[x].Name);
+        }
 
     }
 

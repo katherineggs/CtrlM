@@ -20,7 +20,7 @@ public class App {
     public String Add(@RequestParam String name, Model model){
         Main.NewCategory(name, model);
 
-        return "GetExpenses";
+        return "ShowCategories";
     }
 
 
