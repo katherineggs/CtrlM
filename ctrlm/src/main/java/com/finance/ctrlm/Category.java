@@ -14,7 +14,7 @@ public class Category {
 
     //Constructor
     Category(String name){
-        Name = name;
+        this.Name = name;
 
     }
 
@@ -54,19 +54,21 @@ public class Category {
     }
 
     //List to save the created objects (categories)
-    static int sizeOfObjectList = 0;
-    static int cont2 = 0;
-    static Category objectsList [] = new Category[sizeOfObjectList];
+//    static int sizeOfObjectList = 0;
+//    static int cont2 = 0;
+//    static Category objectsList [] = new Category[sizeOfObjectList];
 
     //Method to create the object and save it in the list
     public static void CreateObject(){
-
+        int cont2 = 0;
+        int sizeOfObjectList = 0;
         sizeOfObjectList += categoriesList.length;
-        objectsList = new Category[sizeOfObjectList];
+        Category[] objectsList = new Category[sizeOfObjectList];
 
         System.out.println("\n\n 1ER PRINT");
         for(int newObj = 0; newObj < categoriesList.length; newObj++){
-            objectsList[newObj] = new Category(categoriesList[cont2]);
+            Category object = new Category(categoriesList[newObj]);
+            objectsList[cont2] = object;
             cont2++;
             System.out.println(objectsList[newObj].Name);
         }
