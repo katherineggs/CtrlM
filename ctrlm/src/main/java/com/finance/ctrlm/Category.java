@@ -55,31 +55,50 @@ public class Category {
 
     //List to save the created objects (categories)
 //    static int sizeOfObjectList = 0;
-//    static int cont2 = 0;
-//    static Category objectsList [] = new Category[sizeOfObjectList];
+    static int cont2 = 0;
+    static Category objectsList [] = new Category[cont2];
 
     //Method to create the object and save it in the list
     public static void CreateObject(){
-        int cont2 = 0;
-        int sizeOfObjectList = 0;
-        sizeOfObjectList += categoriesList.length;
-        Category[] objectsList = new Category[sizeOfObjectList];
+        //int cont2 = 0;
+        //int sizeOfObjectList = 0;
+        //sizeOfObjectList += categoriesList.length;
 
-        System.out.println("\n\n 1ER PRINT");
-        for(int newObj = 0; newObj < categoriesList.length; newObj++){
-            Category object = new Category(categoriesList[newObj]);
-            objectsList[cont2] = object;
-            cont2++;
-            System.out.println(objectsList[newObj].Name);
+        System.out.println("\n\n PRINT categoriesList");
+        for(int x = 0; x < categoriesList.length; x++){
+            System.out.println(categoriesList[x]);
         }
 
-        System.out.println("\n\n 2do PRINT");
+        for(int plus = 0; plus < categoriesList.length; plus++){
+            cont2++;
+        }
+        System.out.println("\n\nCONTADOR: " + cont2);
+
+        objectsList = new Category[cont2];
+
+
+        System.out.println("\n\n 1ER PRINT");
+        String varName;
+        for(int newObj = 0; newObj < categoriesList.length; newObj++){
+            varName = categoriesList[newObj];
+            objectsList[newObj] = new Category(varName);
+            System.out.println(objectsList[newObj].Name);
+            //System.out.println(varName);
+
+
+            //System.arraycopy(categoriesList, newObj, objectsList, newObj, 1);
+            //Category object = new Category(categoriesList[newObj]);
+            //objectsList[cont2] = object;
+            //cont2++;
+            //System.out.println(objectsList[newObj].Name);
+        }
+
+        System.out.println("\n\n PRINT objectList");
         for(int x = 0; x < objectsList.length; x++){
             System.out.println(objectsList[x].Name);
         }
 
     }
-
 
 
     //Method to assign values to the object
