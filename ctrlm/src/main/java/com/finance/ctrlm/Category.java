@@ -71,7 +71,6 @@ public class Category {
             System.out.println(objectsList[newObj].Name);
         }
 
-
         System.out.println("\n\n 2do PRINT");
         for(int x = 0; x < objectsList.length; x++){
             System.out.println(objectsList[x].Name);
