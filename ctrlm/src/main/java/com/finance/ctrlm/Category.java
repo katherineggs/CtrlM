@@ -3,6 +3,9 @@ package com.finance.ctrlm;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.HashSet;
 
 import org.springframework.ui.Model;
 
@@ -13,20 +16,51 @@ public class Category {
     static int SpentMoney;
 
     //Constructor
-    Category(String name){
-        Name = name;
+    Category(String Name){
+        this.Name = Name;
 
     }
 
     //List to save the categories entered
     static int size = 0;
     static int cont = 0;
-    static String categoriesList [] = new String[size];
+    static String categoriesList[];
+    //= new String[size];
 
 
     //Method to add the categories to the list
     public static void addCategory(String name, Model model){
-        Boolean firstRound = true;
+
+        categoriesList = name.split(",");
+
+        sizeOfObjectList += categoriesList.length;
+        objectsList = new Category[sizeOfObjectList];
+
+        System.out.println("\n\n 1ER PRINT");
+        for(int newObj = 0; newObj < categoriesList.length; newObj++){
+            objectsList[newObj] = new Category(categoriesList[newObj]);
+
+            System.out.println(objectsList[newObj].Name);
+
+        }
+
+
+        System.out.println("\n\n PRINT objectList");
+        for(int x = 0; x < objectsList.length; x++){
+            System.out.println(objectsList[x].Name);
+        }
+
+
+
+       /* String ToSplit [] = name.split(",");
+        size += ToSplit.length;
+        categoriesList = new String[size];
+
+        for(int add = 0; add < ToSplit.length; add++){
+            categoriesList[add] = ToSplit[add];
+        }*/
+
+        /*Boolean firstRound = true;
         String[] temp = categoriesList;
         String[] NewCategory = name.split(",");
         size += NewCategory.length;
@@ -49,7 +83,7 @@ public class Category {
                 }
             }
             cont ++;
-        }
+        }*/
         model.addAttribute("categoriesList", categoriesList);
     }
 
@@ -59,6 +93,19 @@ public class Category {
 
     //Method to create the object and save it in the list
     public static void CreateObject(){
+        /*HashSet<Category> objectsList = new HashSet<Category>();
+
+        for(int newObj = 0; newObj < categoriesList.length; newObj++){
+            objectsList.add(new Category(categoriesList[newObj]));
+        }
+
+        System.out.println("\n\n PRINT HASH");
+        for (Category show : objectsList) {
+            System.out.println(show.Name);
+        }*/
+
+
+        //---------------------------- CODE WITH ARRAY -------------------------------
         sizeOfObjectList += categoriesList.length;
         objectsList = new Category[sizeOfObjectList];
 
@@ -75,11 +122,11 @@ public class Category {
 
         }
 
+
         System.out.println("\n\n PRINT objectList");
         for(int x = 0; x < objectsList.length; x++){
             System.out.println(objectsList[x].Name);
         }
-
     }
 
 
@@ -87,9 +134,6 @@ public class Category {
 
     //Method to assign amounts (to the object)
     public static void CalculateExpenses(int Times, int SpentMoney){
-        int TimesCounter;
-        int MoneyCounter;
-
 
 
     }
