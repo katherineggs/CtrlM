@@ -4,6 +4,7 @@ import org.springframework.ui.Model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.HashMap;
 
 public class Prueba {
     static class Category{
@@ -22,13 +23,14 @@ public class Prueba {
     static int contObj = 0;
     static int contNames = 0;
     static Category objectList[] = new Category[size];
+    static String[] namesList = new String[objectList.length];
 
     public static void addCategory(String name, Model model){
         String[] categoriesList = name.split(",");
         size += categoriesList.length;
         Category[] temp = objectList;
         objectList = new Category[size];
-        String[] namesList = new String[objectList.length];
+        //String[] namesList = new String[objectList.length];
 
         for(int i = 0; i < size - categoriesList.length; i ++) {
             objectList[i] = new Category(temp[i].Name);
@@ -47,6 +49,7 @@ public class Prueba {
                 }
             }contObj ++;
         }
+        namesList = new String[objectList.length];
 
         for(int copy = 0; copy < objectList.length; copy++){
             namesList[copy] = objectList[copy].Name;
@@ -64,4 +67,29 @@ public class Prueba {
 
         model.addAttribute("categoriesList", namesList);
     }
+
+
+    static HashMap<String, int[]> amounts = new HashMap<>();
+    public static void CalculateExpenses(String category, int money, Model model){
+
+        System.out.println("\n\nPrint category selected");
+        for(int search = 0; search < objectList.length; search++){
+            
+            if(objectList[search].Name.equals(category)){
+
+
+
+
+                //Prints
+                System.out.println(objectList[search].Name);
+                System.out.println(money);
+            }
+        }
+        model.addAttribute("categoriesList", namesList);
+    }
+
+    public static void CalculateTotalMoney(int money){
+
+    }
+
 }

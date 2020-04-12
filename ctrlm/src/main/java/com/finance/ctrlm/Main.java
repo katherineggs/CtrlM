@@ -9,8 +9,11 @@ public class Main {
     //Method to add a new category and create the object
     public static void NewCategory(String name, Model model){
         Prueba.addCategory(name, model);
-        //Category.CreateObject();
 
+    }
+
+    public static void Expenses(String category, int money, Model model){
+        Prueba.CalculateExpenses(category, money, model);
     }
 
 
