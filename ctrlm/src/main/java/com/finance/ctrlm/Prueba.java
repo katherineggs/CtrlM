@@ -69,23 +69,23 @@ public class Prueba {
     }
 
 
-    static HashMap<String, int[]> amounts = new HashMap<>();
+    static HashMap<String, Integer> amounts = new HashMap<>();
     public static void CalculateExpenses(String category, int money, Model model){
 
         System.out.println("\n\nPrint category selected");
         for(int search = 0; search < objectList.length; search++){
-            
             if(objectList[search].Name.equals(category)){
-
-
-
+                amounts.put(objectList[search].Name, money);
 
                 //Prints
                 System.out.println(objectList[search].Name);
                 System.out.println(money);
             }
         }
+        System.out.println(amounts);
+
         model.addAttribute("categoriesList", namesList);
+        model.addAttribute("amounts", amounts);
     }
 
     public static void CalculateTotalMoney(int money){
