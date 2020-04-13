@@ -70,25 +70,29 @@ public class Prueba {
 
 
     public static void CalculateExpenses(String category, int money, Model model){
-        int lastValue = 0;
-        int totalValue;
-        String newKey;
+        int lastMoneyValue;
+        int totalMoneyValue;
+        int TimesCounter;
 
         for(int search = 0; search < objectList.length; search++){
             if(objectList[search].Name.equals(category)){
-                lastValue = objectList[search].SpentMoney;
-                totalValue = lastValue + money;
-                objectList[search].SpentMoney = totalValue;
+                lastMoneyValue = objectList[search].SpentMoney;
+                totalMoneyValue = lastMoneyValue + money;
+                objectList[search].SpentMoney = totalMoneyValue;
+
+                TimesCounter = objectList[search].Times;
+                TimesCounter++;
+                objectList[search].Times = TimesCounter;
+
+
             }
-            System.out.println(objectList[search].Name + " = " + objectList[search].SpentMoney);
+            System.out.println("\n" + objectList[search].Name + " = " + objectList[search].SpentMoney + ", Times: " + objectList[search].Times);
+
         }
+        System.out.println("--------------------------------------");
 
         model.addAttribute("categoriesList", namesList);
-        model.addAttribute("amounts", objectList);
-    }
-
-    public static void CalculateTotalMoney(int money){
-
+        model.addAttribute("objectList", objectList);
     }
 
 }
