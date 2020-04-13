@@ -9,9 +9,9 @@ import java.util.HashMap;
 public class Prueba {
     static class Category{
         //Attributes
-        String Name;
-        int Times;
-        int SpentMoney;
+        public String Name;
+        public int Times;
+        public int SpentMoney;
 
         //Constructor
         Category(String Name){
