@@ -28,19 +28,12 @@
         <input type='submit' value = 'Add more categories' />
     </form>
 
-    <br><br><h2>EXPENSES:</h2>
-  <!--  <div th:each="amount : ${amounts}">
-        <div th:each="amountEntry : ${amount}">
-            <span th:text="${amountEntry.key}"></span> =
-            <span th:text="${amountEntry.value}"></span>
-        </div>
-    </div>-->
 
+    <br><br><h2>EXPENSES:</h2>
     <div th:each="object : ${objectList}">
         <span th:text="${object.Name}"></span> =
         <span th:text="${object.SpentMoney}"></span>
     </div>
-
 
 </body>
 </html>

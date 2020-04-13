@@ -30,7 +30,6 @@ public class Prueba {
         size += categoriesList.length;
         Category[] temp = objectList;
         objectList = new Category[size];
-        //String[] namesList = new String[objectList.length];
 
         for(int i = 0; i < size - categoriesList.length; i ++) {
             objectList[i] = new Category(temp[i].Name);
