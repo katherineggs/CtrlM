@@ -69,42 +69,22 @@ public class Prueba {
     }
 
 
-    static HashMap<String, Integer> amounts = new HashMap<>();
     public static void CalculateExpenses(String category, int money, Model model){
         int lastValue = 0;
         int totalValue;
         String newKey;
 
-        /*for (HashMap.Entry<String, Integer> entry : amounts.entrySet()) {
-            if(entry.getKey().equals(category)){
-                lastValue = entry.getValue();
-                totalValue = lastValue + money;
-                amounts.put(category, totalValue);
-
-            }else {
-                amounts.put(category, money);
-            }
-        }*/
-
-        System.out.println("\n\nPrint MAP");
         for(int search = 0; search < objectList.length; search++){
-            if(objectList[search].Name.equals(category) && amounts.containsKey(category) == false){
-                amounts.put(objectList[search].Name, money);
-
-            }else if(objectList[search].Name.equals(category) && amounts.containsKey(category) == true){
-                for (int value : amounts.values()) {
-                    lastValue = value;
-                    System.out.println(lastValue);
-                }
-
+            if(objectList[search].Name.equals(category)){
+                lastValue = objectList[search].SpentMoney;
+                totalValue = lastValue + money;
+                objectList[search].SpentMoney = totalValue;
             }
-
+            System.out.println(objectList[search].Name + " = " + objectList[search].SpentMoney);
         }
 
-        System.out.println(amounts);
-
         model.addAttribute("categoriesList", namesList);
-        model.addAttribute("amounts", amounts);
+        model.addAttribute("amounts", objectList);
     }
 
     public static void CalculateTotalMoney(int money){

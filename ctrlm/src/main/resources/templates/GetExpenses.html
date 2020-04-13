@@ -29,12 +29,10 @@
     </form>
 
     <br><br><h2>EXPENSES:</h2>
-    <div th:each="amount : ${amounts}">
-        <div th:each="amountEntry : ${amount}">
-            <span th:text="${amountEntry.key}"></span> =
-            <span th:text="${amountEntry.value}"></span>
-        </div>
-    </div>
+    <!--<div th:each="amount : ${amounts}">
+        <p th:text="${amount.Name}"></p>
+        <p th:text="${amount.SpentMoney}"></p>
+    </div>-->
 
 
 
