@@ -24,44 +24,55 @@ public class Prueba {
     static int contNames = 0;
     static Category objectList[] = new Category[size];
     static String[] namesList = new String[objectList.length];
+    static boolean repeated;
 
     public static void addCategory(String name, Model model){
+        repeated = false;
         String[] categoriesList = name.split(",");
         size += categoriesList.length;
         Category[] temp = objectList;
         objectList = new Category[size];
 
+        //assign previous elements to objectList
         for(int i = 0; i < size - categoriesList.length; i ++) {
-            objectList[i] = new Category(temp[i].Name);
-        }
+            if(temp[i] != null) {
+                objectList[i] = new Category(temp[i].Name);
+            }        }
         for(int i = 0; i < categoriesList.length; i++){
-            for(int a = 0; a < categoriesList.length; a++){
-                if(temp.length != 0){
-                    if(!categoriesList[i].equals(temp[a].Name)) {
-                        objectList[contObj] = new Category(categoriesList[i]);
-
-                    } else{
-                        contObj = contObj - 2;
+            for(int a = 0; a < temp.length; a++) {
+                if(temp.length != 0 && temp[a] != null) {
+                    if (categoriesList[i].equals(temp[a].Name)) {
+                        repeated = true;
                     }
                 } else{
                     objectList[contObj] = new Category(categoriesList[i]);
                 }
-            }contObj ++;
+            }if(!repeated){
+                objectList[contObj] = new Category(categoriesList[i]);
+            } else{
+                contObj --;
+            }
+            contObj ++;
         }
         namesList = new String[objectList.length];
 
         for(int copy = 0; copy < objectList.length; copy++){
-            namesList[copy] = objectList[copy].Name;
+            if(objectList[copy] != null) {
+                namesList[copy] = objectList[copy].Name;
+            }
         }
-
         System.out.println("\nPrint objectList");
         for(int x = 0; x < objectList.length; x++){
-            System.out.println(objectList[x].Name);
+            if(objectList[x] != null) {
+                System.out.println(objectList[x].Name);
+            }
         }
 
         System.out.println("\nPrint nameList");
         for(int y = 0; y < namesList.length; y++){
-            System.out.println(namesList[y]);
+            if(namesList[y] != null) {
+                System.out.println(namesList[y]);
+            }
         }
 
         model.addAttribute("categoriesList", namesList);
@@ -74,19 +85,20 @@ public class Prueba {
         int TimesCounter;
 
         for(int search = 0; search < objectList.length; search++){
-            if(objectList[search].Name.equals(category)){
-                lastMoneyValue = objectList[search].SpentMoney;
-                totalMoneyValue = lastMoneyValue + money;
-                objectList[search].SpentMoney = totalMoneyValue;
+            if(objectList[search] != null) {
+                if (objectList[search].Name.equals(category)) {
+                    lastMoneyValue = objectList[search].SpentMoney;
+                    totalMoneyValue = lastMoneyValue + money;
+                    objectList[search].SpentMoney = totalMoneyValue;
 
-                TimesCounter = objectList[search].Times;
-                TimesCounter++;
-                objectList[search].Times = TimesCounter;
+                    TimesCounter = objectList[search].Times;
+                    TimesCounter++;
+                    objectList[search].Times = TimesCounter;
 
 
+                }
+                System.out.println("\n" + objectList[search].Name + " = " + objectList[search].SpentMoney + ", Times: " + objectList[search].Times);
             }
-            System.out.println("\n" + objectList[search].Name + " = " + objectList[search].SpentMoney + ", Times: " + objectList[search].Times);
-
         }
         System.out.println("--------------------------------------");
 
