@@ -2,7 +2,7 @@
 
 /*GENERAL*/
 body{
-    background: #78BCC4;
+    background: #6C8685;
     min-height:100vh;
     font-family: 'Noto Sans', sans-serif;
     overflow: hidden;
@@ -11,9 +11,14 @@ body{
 h2{
     text-align: center;
     font-family: "Andale Mono";
-    color: #292626;
+    color: #F8ECEC;
     position: relative;
     top: 200px;
+}
+
+img{
+    position: relative;
+    left: 5px;
 }
 
 /*FORM*/
@@ -96,15 +101,15 @@ h2{
     left: 50%;
     transform: translate(-50%, -50%);
 
-    width: 170px;
+    width: 120px;
     height: 40px;
     line-height: 1;
     font-size: 18px;
     font-weight: bold;
     letter-spacing: 1px;
-    border: 3px solid #F7444E;
-    background: #fff;
-    color: #F7444E;
+    border: 3px solid #DBAB61;
+    background: #F8ECEC;
+    color: #DBAB61;
     border-radius: 40px;
     cursor: pointer;
     overflow: hidden;
@@ -112,7 +117,7 @@ h2{
 }
 
 .button-submit:hover{
-    background: #F7444E;
+    background: #DBAB61;
     color: #fff;
 }
 
