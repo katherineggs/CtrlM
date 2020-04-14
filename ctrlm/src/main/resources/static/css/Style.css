@@ -114,6 +114,7 @@ img{
     cursor: pointer;
     overflow: hidden;
     transition: all .35s;
+    outline: none;
 }
 
 .button-submit:hover{
@@ -197,6 +198,7 @@ img{
     cursor: pointer;
     overflow: hidden;
     transition: all .35s;
+    outline: none;
 }
 
 .button-add:hover{
