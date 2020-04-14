@@ -9,7 +9,7 @@
 <body>
 
     <form th:action = '@{expenses}'>
-        <select th:name="Categories">
+        <select th:name="Categories" required>
             <option>Category</option>
 
             <th:block th:each="category : ${categoriesList}">
@@ -30,6 +30,13 @@
 
 
     <br><br><h2>EXPENSES:</h2>
+
+    <th:block th:each="expense : ${expensesList}">
+        <li type="text" name="expense" th:text="${expense}"></li>
+    </th:block>
+
+    <br>---Total---<br>
+
     <div th:each="object : ${objectList}">
         <span th:text="${object.Name}"></span> =
         <span th:text="${object.SpentMoney}"></span>
