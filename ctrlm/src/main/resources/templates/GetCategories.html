@@ -7,32 +7,57 @@
     <!--  JQUERY  -->
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
+    <!--  JS  -->
+    <script type="text/javascript">
+        let btn = document.querySelector("button");
+
+        btn.addEventListener("click", active);
+
+        function active() {
+            btn.classList.toggle("is_active");
+        }
+    </script>
+
     <!--  CSS  -->
-<!--    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>-->
     <link href="../static/css/Style.css" th:href="@{/css/Style.css}" rel="stylesheet" />
 
 
 </head>
 
-<body>
+<body class="body-categories">
+    <h2>CREATE YOUR CATEGORIES</h2>
+    <div class="box">
+        <form action = '/getcategories'>
 
-    <form action = '/getcategories'>
-        <h2>Create your categories:</h2>
-        <label>Name:</label><br>
-        <div id="items">
-           <div><input type="text" name="name" /></div><br>
-        </div>
+            <div id="items">
+                <div class="input-container">
+                    <input type="text" name="name" /><br>
+                    <label>Category Name</label>
+                </div>
+            </div>
 
-        <input type="submit" value="Done" />
-    </form>
-    <button id="add">Add</button><br>
+            <div class="wrapper">
+                <button class="button-submit">
+                    <span class="btn" type="submit" value="Done">Done</span>
+                    <div class="success"></div>
+                </button>
+            </div>
+
+
+        </form>
+        <button id="add">Add</button><br>
+    </div>
 
     <script>
         $(document).ready(function() {
             $("#add").click(function (e) {
                 //Append a new row of code to the "#items" div
-                $("#items").append('<div><input type="text" name="name" /></div>'); });
+                $("#items").append('<div class="input-container">\n' +
+                    '                    <input type="text" name="name" /><br>\n' +
+                    '                    <label>Category Name</label>\n' +
+                    '                </div>'); });
         });
+
     </script>
 
 </body>
