@@ -8,6 +8,8 @@ class AppTest {
     @Test
     void index() {
         assertEquals("food", "food");
+        assertEquals("coffee", "coffee");
+        assertEquals("super", "super");
     }
 
     @Test
