@@ -7,17 +7,6 @@
     <!--  JQUERY  -->
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
-    <!--  JS  -->
-    <script type="text/javascript">
-        let btn = document.querySelector("button");
-
-        btn.addEventListener("click", active);
-
-        function active() {
-            btn.classList.toggle("is_active");
-        }
-    </script>
-
     <!--  CSS  -->
     <link href="../static/css/Style.css" th:href="@{/css/Style.css}" rel="stylesheet" />
 
@@ -27,7 +16,7 @@
 <body class="body-categories">
     <h2>CREATE YOUR CATEGORIES</h2>
     <div class="box">
-        <img th:src="@{/images/category.png}"/>
+<!--        <img th:src="@{/images/category.png}"/>-->
         <form action = '/getcategories'>
 
             <div id="items">
@@ -44,7 +33,16 @@
                 </button>
             </div>
         </form>
-        <button id="add">Add</button><br>
+
+        <div class="wrapper-add">
+            <button id="add" class="button-add">
+                <span class="btn" type="submit" value="Done">+</span>
+                <div class="success-add"></div>
+            </button>
+        </div>
+
+
+<!--        <button id="add">Add</button><br>-->
     </div>
 
 <!--    add new category field-->
@@ -58,6 +56,17 @@
                     '                </div>'); });
         });
 
+    </script>
+
+    <!--  JS  -->
+    <script type="text/javascript">
+        let btn = document.querySelector("button-submit");
+
+        btn.addEventListener("click", active);
+
+        function active() {
+            btn.classList.toggle("is_active");
+        }
     </script>
 
 </body>
