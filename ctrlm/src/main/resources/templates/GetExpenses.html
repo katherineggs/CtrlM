@@ -3,43 +3,58 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Expenses</title>
+
+    <!--  JQUERY  -->
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+    <!--  CSS  -->
+    <link href="../static/css/ExpensesStyle.css" th:href="@{/css/ExpensesStyle.css}" rel="stylesheet" />
 </head>
 
 <body>
 
-    <form th:action = '@{expenses}'>
-        <select th:name="Categories" required>
-            <option>Category</option>
+<!--/////////////////////////////////////////////////////////////////-->
 
-            <th:block th:each="category : ${categoriesList}">
-                <option type="text" name="category" th:text="${category}"></option>
-            </th:block>
+    <div class="div-input">
+        <form th:action = '@{expenses}'>
+            <select th:name="Categories" required>
+                <option>CATEGORY</option>
 
-        </select>
+                <th:block th:each="category : ${categoriesList}">
+                    <option type="text" name="category" th:text="${category}"></option>
+                </th:block>
 
-        <br><br><label>GTQ:</label>
-        <input type="text" th:name="amount" />
+            </select>
 
-        <br><br><input type="submit" value="Add expense"/>
-    </form>
+            <br><br><label>GTQ:</label>
+            <input class="input-money" autocomplete="off" type="text" th:name="amount" />
+
+            <br><br><input class="button-add" type="submit" value="+"/>
+        </form>
+    </div>
 
     <form action = '/index'>
         <input type='submit' value = 'Add more categories' />
     </form>
 
 
-    <br><br><h2>EXPENSES:</h2>
+    <div class="div-show">
+        <br><br><h2>EXPENSES</h2>
 
-    <th:block th:each="expense : ${expensesList}">
-        <li type="text" name="expense" th:text="${expense}"></li>
-    </th:block>
+        <th:block th:each="expense : ${expensesList}">
+            <div class="div-listExpenses">
+                <li type="text" name="expense" th:text="${expense}"></li>
+            </div>
+        </th:block>
 
-    <br>---Total---<br>
+        <h2 class="h2-total">TOTAL</h2>
 
-    <div th:each="object : ${objectList}">
-        <span th:text="${object.Name}"></span> =
-        <span th:text="${object.SpentMoney}"></span>
+        <div th:each="object : ${objectList}">
+            <div class="div-totalList">
+                <span th:text="${object.Name}"></span> =
+                <span th:text="${object.SpentMoney}"></span>
+            </div>
+        </div>
     </div>
 
 </body>

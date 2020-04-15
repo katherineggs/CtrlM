@@ -16,12 +16,8 @@ h2{
     top: 200px;
 }
 
-img{
-    position: relative;
-    left: 5px;
-}
 
-/*FORM*/
+/*FORM GET CATEGORIES*/
 .text-center{
     color:#fff;
     text-transform:uppercase;
@@ -43,6 +39,8 @@ img{
     border-radius:6px;
     padding:70px 100px;
     overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .input-container{

@@ -99,6 +99,7 @@ public class Prueba {
                 System.out.println("\n" + objectList[search].Name + " = " + objectList[search].SpentMoney + ", Times: " + objectList[search].Times);
             }
         }
+
         expensesList = new String[timesCounter];
         for (int i = 0; i < expensesList.length; i++){
             expense = objectList[i].Name + " - Q."+ objectList[i].SpentMoney;
