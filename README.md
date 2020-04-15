@@ -8,6 +8,10 @@ Andrea Reyes 20190265
 Aplicación web financiera donde se puedan añadir gastos mensuales o semanales y se clasifiquen 
 de acuerdo a categorías y cantidades gastadas. 
 
+### Avances proyecto Abril
+- Modelamos las categorias de gastos con una clase, por lo que almacenamos nuestra colección de objetos en un arreglo.
+- Las operaciones con las que cuenta nuestro proyecto, por el momento, son las necesarias para la funcionalidad escencial de la app. Con esto es posible buscar, leer, mover y modificar, los datos.
+
 ### Propósito de la App:
 **¿Qué problema resolvemos?**
 
@@ -24,24 +28,6 @@ y tienen hábitos de consumo diarios.
 - Es importante porque los usuarios que usarán esta herramienta, no tendrán que invertir su tiempo en 
 preocuparse de llevar un control exacto de sus salidas y entradas de dinero.
 
-### Feature Requirements
-A través de una interfaz gráfica:
-- *Notificar en que se está gastando más:* Tomando en cuenta los gastos realizados en el periodo de tiempo, 
-se mandará una alerta sobre cuál ha sido el gasto más frecuente.
-- *Notificar cuales son los gastos más altos y más bajos:* Así mismo, se tendrá la posibilidad de revisar 
-sobre los gastos menos frecuentes y de menor o mayor impacto.
-- *Calcular cuánto dinero se ha ahorrado de acuerdo al ingreso y gastos:* Según la suma de la cantidad de 
-dinero que el usuario gasta, cuánto dinero le queda disponible de su ingreso después de sus gastos para ahorrar.
-- *Calcular cuánto ingreso se debería de tener si los gastos son muy elevados y se quiere seguir gastando la 
-misma cantidad:* Para incentivar la independencia económica, se recomendará aumentar en cierta cantidad el ingreso 
-para no tener los gastos más altos que el ingreso y tener cierto ahorro en el periódo o se recomendará disminuir los 
-gastos si se sigue con el mismo ingreso.
-- *Notificar qué tan cerca se está de llegar a la meta de ahorro o a la estabilidad económica:* Al ser nuevo en la 
-app, el usuario tendrá la opción de ingresar una cantidad de dinero que desee ahorrar con un deadline y ésta le 
-notificará cual es la suma restante para completar su meta o la cantidad que le hace falta para completarla.
-- *Gráficas de las tendencias de los gastos:* Se mostrará gráfica y visualmente cómo el usuario usa su dinero para 
-que pueda comparar mensual o semanalmente  su comportamiento y hábitos de consumo.
-
 ### Objetivos para Criterio de Aceptación
 - *Fácil de entender:* que a los usuarios no se les dificulte el uso de la app y no tengan que invertir esfuerzo en 
 entender el funcionamiento. 
@@ -57,6 +43,6 @@ para alguien externo o para los encargados de su desarrollo.
 - Febrero 26: entrega PRD
 - Marzo 18-25: avances de proyecto
 - Abril 6-10:  revisión de requerimientos 
-- Mayo 11-15: entrega proyecto final.
+- Mayo 18: entrega proyecto final.
 *Fechas tentativas*
 

@@ -78,12 +78,15 @@ public class Prueba {
         model.addAttribute("categoriesList", namesList);
     }
 
-    static int timesCounter = 0;
+    static int expensesCount = 0;
+    static int index = 0;
+    static String[] expensesList = new String[expensesCount];
     public static void CalculateExpenses(String category, int money, Model model){
         int lastMoneyValue;
         int totalMoneyValue;
-        String[] expensesList;
+        String[] expenseTemp;
         String expense;
+        int timesCounter;
 
         for(int search = 0; search < objectList.length; search++){
             if(objectList[search] != null) {
@@ -100,11 +103,15 @@ public class Prueba {
             }
         }
 
-        expensesList = new String[timesCounter];
-        for (int i = 0; i < expensesList.length; i++){
-            expense = objectList[i].Name + " - Q."+ objectList[i].SpentMoney;
-            expensesList[i] = expense;
+        expensesCount++;
+        expenseTemp = expensesList;
+        expensesList = new String[expensesCount];
+        for (int i = 0; i < expensesList.length -1; i++){
+            expensesList[i] = expenseTemp[i];
         }
+        expense = category + " - Q."+ money;
+        expensesList[index] = expense;
+        index++;
 
         System.out.println("--------------------------------------");
 
