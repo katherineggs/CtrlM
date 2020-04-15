@@ -4,13 +4,13 @@ Aplicación web financiera.
 Katherine García 20190418
 Andrea Reyes 20190265
 
+## Avances proyecto Abril
+- Modelamos las categorías de gastos, del usuario, con una clase. Así mismo, almacenamos nuestra colección de objetos en un arreglo.
+- Las operaciones con las que cuenta nuestro proyecto, por el momento, son las necesarias para la funcionalidad escencial de la aplicación. Con esto es posible buscar, leer, mover y modificar, los datos.
+
 ## Ctrl + Money:
 Aplicación web financiera donde se puedan añadir gastos mensuales o semanales y se clasifiquen 
 de acuerdo a categorías y cantidades gastadas. 
-
-### Avances proyecto Abril
-- Modelamos las categorias de gastos con una clase, por lo que almacenamos nuestra colección de objetos en un arreglo.
-- Las operaciones con las que cuenta nuestro proyecto, por el momento, son las necesarias para la funcionalidad escencial de la app. Con esto es posible buscar, leer, mover y modificar, los datos.
 
 ### Propósito de la App:
 **¿Qué problema resolvemos?**
