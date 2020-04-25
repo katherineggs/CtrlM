@@ -13,8 +13,6 @@
 
 <body>
 
-<!--/////////////////////////////////////////////////////////////////-->
-
     <div class="div-input">
         <form th:action = '@{expenses}'>
             <select th:name="Categories" required>
@@ -36,26 +34,6 @@
     <form action = '/index'>
         <input type='submit' value = 'Add more categories' />
     </form>
-
-
-    <div class="div-show">
-        <br><br><h2>EXPENSES</h2>
-
-        <th:block th:each="expense : ${expensesList}">
-            <div class="div-listExpenses">
-                <li type="text" name="expense" th:text="${expense}"></li>
-            </div>
-        </th:block>
-
-        <h2 class="h2-total">TOTAL</h2>
-
-        <div th:each="object : ${objectList}">
-            <div class="div-totalList">
-                <span th:text="${object.Name}"></span> =
-                <span th:text="${object.SpentMoney}"></span>
-            </div>
-        </div>
-    </div>
 
 </body>
 </html>

@@ -10,15 +10,47 @@
     <!--  CSS  -->
     <link href="../static/css/ExpensesStyle.css" th:href="@{/css/ExpensesStyle.css}" rel="stylesheet" />
 </head>
+
 <body>
-    <nav class="nav">
-        <a href="GetExpenses.html" class="nav-item is-active" active-color="orange">Home</a>
-        <a href="#" class="nav-item" active-color="green">About</a>
-        <a href="#" class="nav-item" active-color="blue">Testimonials</a>
-        <a href="#" class="nav-item" active-color="red">Blog</a>
-        <a href="#" class="nav-item" active-color="rebeccapurple">Contact</a>
-        <span class="nav-indicator"></span>
-    </nav>
+
+    <!--    NAV BAR      -->
+    <div class="menu">
+        <div class="container">
+            <div class="toggle"></div>
+        </div>
+        <span class="hidden"><a href="GetExpenses.html">Add Expense</a></span>
+        <span class="hidden"><a href="GetCategories.html">Add Category</a></span>
+        <span class="hidden"><a href="#">Info</a></span>
+        <span class="hidden"><a href="#">Contact</a></span>
+    </div>
+
+    <script>
+        $('.toggle').on('click', function() {
+            $('.menu').toggleClass('expanded');
+            $('span').toggleClass('hidden');
+            $('.container , .toggle').toggleClass('close');
+        });
+    </script>
+    <!--    NAV BAR      -->
+
+    <div class="div-show">
+        <br><br><h2>EXPENSES</h2>
+
+        <th:block th:each="expense : ${expensesList}">
+            <div class="div-listExpenses">
+                <li type="text" name="expense" th:text="${expense}"></li>
+            </div>
+        </th:block>
+
+        <h2 class="h2-total">TOTAL</h2>
+
+        <div th:each="object : ${objectList}">
+            <div class="div-totalList">
+                <span th:text="${object.Name}"></span> =
+                <span th:text="${object.SpentMoney}"></span>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>

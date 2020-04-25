@@ -102,6 +102,7 @@ h2{
     top: 70px;
     text-decoration: none;
     text-transform: uppercase;
+    outline: none;
 }
 
 .submit-button::before {
@@ -142,6 +143,7 @@ h2{
     top: 35px;
     text-decoration: none;
     text-transform: uppercase;
+    outline: none;
 }
 
 .add-button::before {

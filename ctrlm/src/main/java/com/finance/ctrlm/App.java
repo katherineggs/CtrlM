@@ -29,7 +29,7 @@ public class App {
     @GetMapping("expenses")
     public String inputExpenses(@RequestParam(value = "Categories") String category, @RequestParam(value="amount") int money, Model model){
         Main.Expenses(category, money, model);
-        return "GetExpenses";
+        return "ShowExpenses";
     }
 
 }
