@@ -25,23 +25,13 @@
                 </div>
             </div>
 
-            <div class="wrapper">
-                <button class="button-submit">
-                    <span class="btn" type="submit" value="Done">Done</span>
-                    <div class="success"></div>
-                </button>
-            </div>
+            <button type="submit" value="Done" class="submit-button">Done</button>
+
         </form>
 
         <div class="wrapper-add">
-            <button id="add" class="button-add">
-                <span class="btn" type="submit" value="Done">+</span>
-                <div class="success-add"></div>
-            </button>
+            <button id="add" class="add-button">+</button>
         </div>
-
-
-<!--        <button id="add">Add</button><br>-->
     </div>
 
 <!--    add new category field-->
@@ -55,17 +45,6 @@
                     '                </div>'); });
         });
 
-    </script>
-
-    <!--  JS  -->
-    <script type="text/javascript">
-        let btn = document.querySelector("button-submit");
-
-        btn.addEventListener("click", active);
-
-        function active() {
-            btn.classList.toggle("is_active");
-        }
     </script>
 
 </body>
