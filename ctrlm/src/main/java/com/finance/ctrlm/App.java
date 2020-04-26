@@ -32,4 +32,15 @@ public class App {
         return "ShowExpenses";
     }
 
+    //------ MENU -------
+    @GetMapping("/GetExpenses")
+    public String showExpenses(){
+        return "GetExpenses";
+    }
+
+    @GetMapping("/GetCategories")
+    public String showCategories(){
+        return "GetCategories";
+    }
+
 }
