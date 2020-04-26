@@ -109,7 +109,7 @@ public class Prueba {
         for (int i = 0; i < expensesList.length -1; i++){
             expensesList[i] = expenseTemp[i];
         }
-        expense = category + " - Q."+ money;
+        expense = category + " Q" + money;
         expensesList[index] = expense;
         index++;
 

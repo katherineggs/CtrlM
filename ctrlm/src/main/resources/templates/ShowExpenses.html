@@ -11,7 +11,7 @@
     <link href="../static/css/ExpensesStyle.css" th:href="@{/css/ExpensesStyle.css}" rel="stylesheet" />
 </head>
 
-<body>
+<body class="showEx-body">
 
     <!--    NAV BAR      -->
     <div class="menu">
@@ -33,17 +33,18 @@
     </script>
     <!--    NAV BAR      -->
 
-    <div class="div-show">
-        <br><br><h2>EXPENSES</h2>
+    <h2 class="expenses-h2">EXPENSES</h2>
 
+    <div class="div-show">
+        <h2 class="h2-individual">INDIVIDUALS</h2>
         <th:block th:each="expense : ${expensesList}">
             <div class="div-listExpenses">
                 <li type="text" name="expense" th:text="${expense}"></li>
             </div>
         </th:block>
 
-        <h2 class="h2-total">TOTAL</h2>
 
+        <h2 class="h2-total">TOTAL</h2>
         <div th:each="object : ${objectList}">
             <div class="div-totalList">
                 <span th:text="${object.Name}"></span> =
