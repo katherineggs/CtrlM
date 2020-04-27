@@ -6,7 +6,7 @@ Andrea Reyes 20190265
 
 ## Estructura de archivo
 - En este proyecto la estructura de archivo a usar es JSON. Se eligió por su similar estructura a un diccionario y creemos que es la mejor manera de manejar nuestra información. 
-[![](file:///C:/Users/kgrac/Desktop/CtrlM/imgs/json.png)]()
+[![](https://static.goanywhere.com/images/tutorials/write-json/WriteJsonIlustration4.png)]()
 ## Avances proyecto Abril
 - Modelamos las categorías de gastos, del usuario, con una clase. Así mismo, almacenamos nuestra colección de objetos en un arreglo.
 - Las operaciones con las que cuenta nuestro proyecto, por el momento, son las necesarias para la funcionalidad escencial de la aplicación. Con esto es posible buscar, leer, mover y modificar, los datos.
