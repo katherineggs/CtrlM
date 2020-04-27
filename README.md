@@ -5,7 +5,8 @@ Katherine García 20190418
 Andrea Reyes 20190265
 
 ## Estructura de archivo
-- En este proyecto la estructura de archivo a usar es Json. Se eligió por su similar estructura a un diccionario y creemos que es la mejor manera de manejar nuestra información. 
+- En este proyecto la estructura de archivo a usar es JSON. Se eligió por su similar estructura a un diccionario y creemos que es la mejor manera de manejar nuestra información. 
+- <a href=""><img src= "C:\Users\kgrac\Desktop\CtrlM\imgs"></a>
 
 ## Avances proyecto Abril
 - Modelamos las categorías de gastos, del usuario, con una clase. Así mismo, almacenamos nuestra colección de objetos en un arreglo.
