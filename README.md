@@ -4,6 +4,9 @@ Aplicación web financiera.
 Katherine García 20190418
 Andrea Reyes 20190265
 
+## Estructura de archivo
+- En este proyecto la estructura de archivo a usar es Json. Se eligió por su similar estructura a un diccionario y creemos que es la mejor manera de manejar nuestra información. 
+
 ## Avances proyecto Abril
 - Modelamos las categorías de gastos, del usuario, con una clase. Así mismo, almacenamos nuestra colección de objetos en un arreglo.
 - Las operaciones con las que cuenta nuestro proyecto, por el momento, son las necesarias para la funcionalidad escencial de la aplicación. Con esto es posible buscar, leer, mover y modificar, los datos.
