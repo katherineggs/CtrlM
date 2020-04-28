@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:/>/www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+
+    <!--  CSS  -->
+    <link href="../static/css/Style.css" th:href="@{/css/Style.css}" rel="stylesheet" />
+
+</head>
+
+<body class="body-categories">
+    <h2>WHAT IS YOUR INCOME?</h2>
+    <div class="box">
+        <form action = '/getincome'>
+            <div class="input-container">
+                <input autocomplete="off" type="text" th:name="IncomeAmount" /><br>
+                <label>Amount</label>
+            </div>
+
+            <button type="submit" value="Done" class="submit-button">Done</button>
+        </form>
+    </div>
+
+</body>
+</html>

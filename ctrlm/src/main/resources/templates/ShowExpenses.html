@@ -35,6 +35,15 @@
 
     <h2 class="expenses-h2">EXPENSES</h2>
 
+<!--    INCOME DIV     -->
+    <div class="div-income">
+        <h2 class="h2-income">INCOME</h2>
+        <span class="span-tIncome" th:text="${TotalIncome}"></span>
+
+        <h2 class="h2-tBalance">CURRENT BALANCE</h2>
+    </div>
+
+    <!--    EXPENSES DIV     -->
     <div class="div-show">
         <h2 class="h2-individual">INDIVIDUALS</h2>
         <th:block th:each="expense : ${expensesList}">

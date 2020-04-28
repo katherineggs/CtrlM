@@ -80,13 +80,13 @@ public class Prueba {
 
     static int expensesCount = 0;
     static int index = 0;
+    static int lastMoneyValue;
+    static int totalMoneyValue;
+    static int timesCounter;
     static String[] expensesList = new String[expensesCount];
     public static void CalculateExpenses(String category, int money, Model model){
-        int lastMoneyValue;
-        int totalMoneyValue;
         String[] expenseTemp;
         String expense;
-        int timesCounter;
 
         for(int search = 0; search < objectList.length; search++){
             if(objectList[search] != null) {
@@ -113,11 +113,23 @@ public class Prueba {
         expensesList[index] = expense;
         index++;
 
+        System.out.println("income: " + TotalIncome);
         System.out.println("--------------------------------------");
 
         model.addAttribute("expensesList", expensesList);
         model.addAttribute("categoriesList", namesList);
         model.addAttribute("objectList", objectList);
+    }
+
+
+    static int TotalIncome;
+    static int Balance;
+    public static void Incomes(int IncomeAmount, Model model){
+        TotalIncome = IncomeAmount;
+        Balance = IncomeAmount - lastMoneyValue;
+
+        model.addAttribute("TotalIncome", TotalIncome);
+        model.addAttribute("Balance", Balance);
     }
 
 }

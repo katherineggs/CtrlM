@@ -10,10 +10,16 @@ import org.springframework.ui.Model;
 @Controller
 public class App {
 
-    //First page = Get Categories
+    //First page = Get income
     @GetMapping("index")
     public String index(){
 
+        return "GetIncome";
+    }
+
+    @GetMapping("getincome")
+    public String income(@RequestParam int IncomeAmount, Model model){
+        Prueba.Incomes(IncomeAmount, model);
         return "GetCategories";
     }
 

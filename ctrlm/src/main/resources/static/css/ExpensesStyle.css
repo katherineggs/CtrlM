@@ -222,11 +222,11 @@ span a:hover {
     background: #294f50;
 }
 
-.div-show{
+.div-income{
     position:absolute;
-    left:50%;
-    top:48%;
-    height: 340px;
+    left: 50%;
+    top: 168px;
+    height: 1px;
     width: 350px;
     transform: translate(-50%,-50%);
     background-color: rgba(0, 0, 0, 0.89);
@@ -235,7 +235,23 @@ span a:hover {
     padding:70px 100px;
     overflow: scroll;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: scroll;
+}
+
+.div-show{
+    position:absolute;
+    left:50%;
+    top:57%;
+    height: 200px;
+    width: 350px;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0, 0, 0, 0.89);
+    opacity: 0.90;
+    border-radius:6px;
+    padding:70px 100px;
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .expenses-h2{
@@ -281,4 +297,31 @@ span a:hover {
     position: relative;
     top: -127px;
     left: 70%;
+}
+
+.h2-income{
+    font-family: "Andale Mono";
+    color: #F8ECEC;
+    font-size: 20px;
+    position: relative;
+    top:-60px;
+    left:5px;
+}
+
+.span-tIncome{
+    font-family: "Andale Mono";
+    color: #F8ECEC;
+    font-size: 20px;
+    position: relative;
+    top:-5px;
+    left:5px;
+}
+
+.h2-tBalance{
+    font-family: "Andale Mono";
+    color: #F8ECEC;
+    font-size: 20px;
+    position: relative;
+    top:-105px;
+    left:220px;
 }
