@@ -1,1 +1,1 @@
-{"User1":{"Name":"Andrea","Income":800,"Category":"coffee"}}
+{"User1":{"Name":"Andrea","Income":900,"Category1":{"categoryName1":"food","Money Spent1":78},"Category2":{"categoryName2":"coffee","Money Spent2":0}}}

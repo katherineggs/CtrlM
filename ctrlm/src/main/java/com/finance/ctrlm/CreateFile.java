@@ -1,5 +1,6 @@
 package com.finance.ctrlm;
 
+import ch.qos.logback.core.net.SyslogOutputStream;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import java.io.FileWriter;
@@ -11,11 +12,14 @@ public class CreateFile {
     public static void fileCreate() {
         //Creating a JSONObject object
         JSONObject jsonObject = new JSONObject();
-        Map infoUser = new LinkedHashMap(5);
+        Map infoUser = new LinkedHashMap();
         infoUser.put("Name", "Andrea");
         infoUser.put("Income", Prueba.TotalIncome);
-        for(int i =0; i < Prueba.objectList.length; i ++){
-            infoUser.put("Category",Prueba.objectList[i].Name);
+        for(int i = 0; i < Prueba.objectList.length; i ++){
+            Map infoCategory = new LinkedHashMap();
+            infoCategory.put("categoryName"+(i+1),Prueba.objectList[i].Name);
+            infoCategory.put("Money Spent"+(i+1), Prueba.objectList[i].SpentMoney);
+            infoUser.put("Category"+(i+1), infoCategory);
         }
         //Inserting key-value pairs into the json object
         jsonObject.put("User1", infoUser);
