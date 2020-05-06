@@ -29,7 +29,7 @@ public class Prueba {
     public static void addCategory(String name, Model model){
         repeated = false;
         String[] categoriesList = name.split(",");
-        size += categoriesList.length;
+        size += categoriesList.length   ;
         Category[] temp = objectList;
         objectList = new Category[size];
 
