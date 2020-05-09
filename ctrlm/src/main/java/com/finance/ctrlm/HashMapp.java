@@ -1,42 +1,133 @@
 package com.finance.ctrlm;
 
-import java.util.ArrayList;
-import java.util.List;
+public class HashMapp<K,V>{
+    private Entry<K,V>[] hash;
+    private int capacity;
+    private int size =0;
+    private double num = 0.75;
 
-public class HashMapp {
-    class Container{
-        Object key;
-        Object value;
-        public void ins(Object key, Object value){
-            this.key = key;
-            this.value = value;
-        }
+    public HashMapp(){//capacity
+        this(16);
     }
-    Container c;
-    List<Container> recList;
-
-    public HashMapp(){
-        this.recList = new ArrayList<Container>();
+    public HashMapp(int capacity){
+        this.capacity = capacity;
+        this.hash = new Entry[this.capacity];
     }
-    public void put(Object key, Object value){
-        this.c = new Container();
-        c.ins(key,value);
-        for(int i = 0; i < recList.size(); i++){
-            Container c1 = recList.get(i);
-            if(c1.key.equals(key)){
-                recList.remove(i);
-                break;
+    public void Put(K key, V value){
+        if(size == (capacity*num)){//full
+            Entry<K,V>[] temp = hash;
+            capacity *= 2;
+            size = 0;
+            hash = new Entry[capacity];
+            for(Entry<K,V> i: temp){//older data
+                while(i != null){
+                    Put(i.key, i.value);
+                    i = i.next;
+                }
             }
         }
-        recList.add(c);
-    }
-    public Object get(Object key){
-        for(int i = 0; i < this.recList.size(); i++){
-            Container con = recList.get(i);
-            if(key.toString() == con.key.toString()){
-                return con.value;
+        Entry<K,V> newEntry = new Entry<>(key,value,null);//new data
+        int hashNum = getHash(key) % getHashSize();
+        Entry<K,V> existing  = hash[hashNum];
+
+        if(existing == null){ //not existing
+            hash[hashNum] = newEntry;
+            size ++;
+        }
+        else{ //if exists
+            while(existing.next != null){
+                if(existing.key.equals(key)){
+                    existing.value = value;
+                    return;
+                }
+                existing =existing.next;
             }
+            if(existing.key.equals(key)){
+                existing.value = value;
+            }
+            else{
+                existing.next = newEntry;
+                size ++;
+            }
+        }
+    }
+    public V Get(K key){//return value
+        Entry<K,V> newHash = hash[getHash(key) % getHashSize()];
+        while(newHash != null){
+            if(key.equals(newHash.key)){
+                return newHash.value;
+            }
+            newHash = newHash.next;
         }
         return null;
+    }
+    public int size(){
+        return size;
+    }
+    private int getHashSize(){
+        return hash.length;
+    }
+    private int getHash(K key){
+        return key == null ? 0 : Math.abs(key.hashCode());
+    }
+    @Override //method to override actual toString
+    public String toString(){
+        String dictionary = "";//big string
+        for(Entry i : hash){
+            while(i != null){
+                dictionary += i;
+                if(i.next != null){
+                    dictionary += (", ");
+                }
+                i = i.next;
+            }
+        }
+        return "{" + dictionary + "}";
+    }
+
+    static class Entry<K,V>{//<K,V> type of the class
+        final K key;
+        V value;
+        Entry<K,V> next;
+
+        public Entry(K key, V value, Entry<K,V> next){
+            this.key = key;
+            this.value = value;
+            this.next = next;//node of a linked list
+        }
+        public K getKey(){
+            return key;
+        }
+        public V getValue(){
+            return value;
+        }
+        public Entry<K,V> getNext(){
+            return next;
+        }
+
+        @Override
+        public boolean equals(Object obj){
+            if(obj == this){
+                return true;
+            }
+            if(obj instanceof Entry){
+                Entry entry = (Entry) obj;
+                return key.equals(entry.getValue());
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode(){
+            int hash = 13;
+            hash = 17 * hash + ((key == null) ? 0 : key.hashCode());
+            hash = 17 * hash + ((key == null) ? 0 : value.hashCode());
+            return hash;
+        }
+
+        @Override
+        public String toString(){
+            return key + " : " + value + ", ";
+        }
     }
 }
