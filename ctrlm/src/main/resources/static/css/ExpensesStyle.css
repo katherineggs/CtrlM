@@ -96,6 +96,7 @@ label{
     transition: all .35s;
 }
 
+/*------------------------------------------------------------------*/
 /*SHOW EXPENSES*/
 /*NAV BAR*/
 .menu {
@@ -222,22 +223,6 @@ span a:hover {
     background: #294f50;
 }
 
-.div-income{
-    position:absolute;
-    left: 50%;
-    top: 168px;
-    height: 1px;
-    width: 350px;
-    transform: translate(-50%,-50%);
-    background-color: rgba(0, 0, 0, 0.89);
-    opacity: 0.90;
-    border-radius:6px;
-    padding:70px 100px;
-    overflow: scroll;
-    overflow-x: hidden;
-    overflow-y: scroll;
-}
-
 .div-show{
     position:absolute;
     left:50%;
@@ -278,7 +263,7 @@ span a:hover {
     font-size: 20px;
     position: relative;
     top: -127px;
-    left: 275px;
+    left: 290px;
 }
 
 .div-listExpenses{
@@ -299,6 +284,33 @@ span a:hover {
     left: 70%;
 }
 
+.span-totalEx{
+    font-family: "Andale Mono";
+    font-size: 20px;
+    color: #F8ECEC;
+    position: relative;
+    top: -20px;
+    left: 85px;
+}
+
+/*------------------------------------------------------------------*/
+/*SHOW INCOME*/
+.div-income{
+    position:absolute;
+    left: 50%;
+    top: 168px;
+    height: 1px;
+    width: 350px;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0, 0, 0, 0.89);
+    opacity: 0.90;
+    border-radius:6px;
+    padding:70px 100px;
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
 .h2-income{
     font-family: "Andale Mono";
     color: #F8ECEC;
@@ -313,8 +325,8 @@ span a:hover {
     color: #F8ECEC;
     font-size: 20px;
     position: relative;
-    top:-5px;
-    left:5px;
+    top: -50px;
+    left: 15px;
 }
 
 .h2-tBalance{
@@ -322,6 +334,6 @@ span a:hover {
     color: #F8ECEC;
     font-size: 20px;
     position: relative;
-    top:-105px;
-    left:220px;
+    top:-135px;
+    left:200px;
 }

@@ -31,17 +31,20 @@
             $('.container , .toggle').toggleClass('close');
         });
     </script>
-    <!--    NAV BAR      -->
 
+
+    <!--    SHOW EXPENSES      -->
     <h2 class="expenses-h2">EXPENSES</h2>
 
-<!--    INCOME DIV     -->
+    <!--    INCOME DIV     -->
     <div class="div-income">
         <h2 class="h2-income">INCOME</h2>
-        <span class="span-tIncome" th:text ="${TotalIncome}">
-        </span>
+        <li th:text="${TotalIncome}" class="span-tIncome"></li>
+        <!--<span th:text="${TotalIncome}" class="span-tIncome" ></span>-->
+
 
         <h2 class="h2-tBalance">CURRENT BALANCE</h2>
+        <span th:text="${Balance}"></span>
     </div>
 
     <!--    EXPENSES DIV     -->
@@ -55,12 +58,12 @@
 
 
         <h2 class="h2-total">TOTAL</h2>
-        <div th:each="object : ${objectList}">
+        <th:block th:each="object : ${objectList}">
             <div class="div-totalList">
-                <span th:text="${object.Name}"></span> =
-                <span th:text="${object.SpentMoney}"></span>
+                <li th:text="${object.Name}"></li>
+                <span th:text="${object.SpentMoney}" class="span-totalEx"></span>
             </div>
-        </div>
+        </th:block>
     </div>
 
 </body>

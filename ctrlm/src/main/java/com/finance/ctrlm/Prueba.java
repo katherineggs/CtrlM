@@ -113,7 +113,6 @@ public class Prueba {
         expensesList[index] = expense;
         index++;
 
-        System.out.println("income: " + TotalIncome);
         System.out.println("--------------------------------------");
 
         model.addAttribute("expensesList", expensesList);
@@ -122,11 +121,14 @@ public class Prueba {
     }
 
 
-    static int TotalIncome;
+    public static int TotalIncome;
     static int Balance;
     public static void Incomes(int IncomeAmount, Model model){
         TotalIncome = IncomeAmount;
         Balance = IncomeAmount - lastMoneyValue;
+
+        System.out.println("income: " + TotalIncome);
+        System.out.println("Balance: " + Balance);
 
         model.addAttribute("TotalIncome", TotalIncome);
         model.addAttribute("Balance", Balance);

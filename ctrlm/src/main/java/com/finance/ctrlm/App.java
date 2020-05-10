@@ -42,11 +42,13 @@ public class App {
     //------ MENU -------
     @GetMapping("/GetExpenses")
     public String showExpenses(){
+
         return "GetExpenses";
     }
 
     @GetMapping("/GetCategories")
     public String showCategories(){
+
         return "GetCategories";
     }
 
