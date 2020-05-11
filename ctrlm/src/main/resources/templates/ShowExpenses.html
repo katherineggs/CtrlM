@@ -43,7 +43,7 @@
 
 
         <h2 class="h2-tBalance">CURRENT BALANCE</h2>
-        <span th:text="${Balance}"></span>
+        <span th:text="${Balance}" class="span-balance"></span>
     </div>
 
     <!--    EXPENSES DIV     -->
@@ -57,24 +57,21 @@
 
 
         <h2 class="h2-total">TOTAL</h2>
-
-            <div class="div-totalList">
-                <table>
-                    <tbody>
-                    <tr th:each="object : ${objectList}">
-                        <td>•</td>
-                        <td th:text="${object.Name}"></td>
-                        <td> Q</td>
-                        <td th:text="${object.SpentMoney}"></td>
-                    </tr>
-                    </tbody>
-                </table>
-
-<!--                <li th:text="${object.Name}">category</li>-->
-<!--                <span th:text="${object.SpentMoney}" class="span-spentMoney">10</span>-->
-            </div>
+        <div class="div-totalList">
+            <table>
+                <tbody>
+                <tr th:each="object : ${objectList}">
+                    <td>•</td>
+                    <td th:text="${object.Name}"></td>
+                    <td>    </td>
+                    <td>    </td>
+                    <td> Q</td>
+                    <td th:text="${object.SpentMoney}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
 
     </div>
-
 </body>
 </html>

@@ -113,9 +113,6 @@ public class Prueba {
         expensesList[index] = expense;
         index++;
 
-        Balance = incomeAmount - money;
-        //balance = "Q" + Balance;
-
         System.out.println("--------------------------------------");
 
         model.addAttribute("expensesList", expensesList);
@@ -128,12 +125,13 @@ public class Prueba {
 
 
     public static String TotalIncome;
-    static int incomeAmount;
     static int Balance;
     static String balance;
     public static void Incomes(int IncomeAmount){
-        incomeAmount = IncomeAmount;
+
         TotalIncome = "Q" + IncomeAmount;
+        Balance = IncomeAmount - totalMoneyValue;
+        balance = "Q" + Balance;
         //Balance = IncomeAmount - lastMoneyValue;
 
         System.out.println("income: " + TotalIncome);

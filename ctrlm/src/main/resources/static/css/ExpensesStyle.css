@@ -338,6 +338,15 @@ span a:hover {
     left: -3px;
 }
 
+.span-balance{
+    font-family: "Andale Mono";
+    color: #F8ECEC;
+    font-size: 20px;
+    position: relative;
+    top: -50px;
+    left: -3px;
+}
+
 .h2-tBalance{
     font-family: "Andale Mono";
     color: #F8ECEC;
