@@ -18,8 +18,8 @@ public class App {
     }
 
     @GetMapping("getincome")
-    public String income(@RequestParam int IncomeAmount, Model model){
-        Prueba.Incomes(IncomeAmount, model);
+    public String income(@RequestParam int IncomeAmount){
+        Prueba.Incomes(IncomeAmount);
         return "GetCategories";
     }
 

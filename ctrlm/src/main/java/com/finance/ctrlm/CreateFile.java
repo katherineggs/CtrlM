@@ -10,7 +10,7 @@ public class CreateFile {
         JSONObject jsonObject = new JSONObject();
         HashMapp<String,String> infoUser = new HashMapp<>();
         infoUser.Put("Name", "Andrea");
-        infoUser.Put("Income", Integer.toString(Prueba.TotalIncome));
+        infoUser.Put("Income", (Prueba.TotalIncome));
         for(int i = 0; i < Prueba.objectList.length; i ++){
             HashMapp<String,String> infoCategory = new HashMapp<>();//removable
             infoCategory.Put("Category Name "+(i+1),Prueba.objectList[i].Name);

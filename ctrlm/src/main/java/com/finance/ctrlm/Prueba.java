@@ -94,7 +94,6 @@ public class Prueba {
                     lastMoneyValue = objectList[search].SpentMoney;
                     totalMoneyValue = lastMoneyValue + money;
                     objectList[search].SpentMoney = totalMoneyValue;
-
                     timesCounter = objectList[search].Times;
                     timesCounter++;
                     objectList[search].Times = timesCounter;
@@ -103,6 +102,7 @@ public class Prueba {
             }
         }
 
+        //Expenses List to print
         expensesCount++;
         expenseTemp = expensesList;
         expensesList = new String[expensesCount];
@@ -113,25 +113,32 @@ public class Prueba {
         expensesList[index] = expense;
         index++;
 
+        Balance = incomeAmount - money;
+        //balance = "Q" + Balance;
+
         System.out.println("--------------------------------------");
 
         model.addAttribute("expensesList", expensesList);
         model.addAttribute("categoriesList", namesList);
+        model.addAttribute("TotalIncome", TotalIncome);
         model.addAttribute("objectList", objectList);
+        model.addAttribute("Balance", Balance);
+
     }
 
 
-    public static int TotalIncome;
+    public static String TotalIncome;
+    static int incomeAmount;
     static int Balance;
-    public static void Incomes(int IncomeAmount, Model model){
-        TotalIncome = IncomeAmount;
-        Balance = IncomeAmount - lastMoneyValue;
+    static String balance;
+    public static void Incomes(int IncomeAmount){
+        incomeAmount = IncomeAmount;
+        TotalIncome = "Q" + IncomeAmount;
+        //Balance = IncomeAmount - lastMoneyValue;
 
         System.out.println("income: " + TotalIncome);
         System.out.println("Balance: " + Balance);
 
-        model.addAttribute("TotalIncome", TotalIncome);
-        model.addAttribute("Balance", Balance);
     }
 
 }
