@@ -9,6 +9,12 @@
 
     <!--  CSS  -->
     <link href="../static/css/ExpensesStyle.css" th:href="@{/css/ExpensesStyle.css}" rel="stylesheet" />
+
+    <!--  CHANGES  -->
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
 </head>
 
 <body class="showEx-body">
@@ -42,8 +48,9 @@
         <span th:text="${TotalIncome}" class="span-tIncome"></span>
 
 
+        <span th:text="${balance}" class="span-balance"></span>
         <h2 class="h2-tBalance">CURRENT BALANCE</h2>
-        <span th:text="${Balance}" class="span-balance"></span>
+
     </div>
 
     <!--    EXPENSES DIV     -->
@@ -54,7 +61,6 @@
                 <li type="text" name="expense" th:text="${expense}"></li>
             </div>
         </th:block>
-
 
         <h2 class="h2-total">TOTAL</h2>
         <div class="div-totalList">

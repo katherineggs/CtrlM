@@ -97,6 +97,9 @@ public class Prueba {
                     timesCounter = objectList[search].Times;
                     timesCounter++;
                     objectList[search].Times = timesCounter;
+
+                    Balance = income - totalMoneyValue;
+                    balance = "Q " + Balance;
                 }
                 System.out.println("\n" + objectList[search].Name + " = " + objectList[search].SpentMoney + ", Times: " + objectList[search].Times);
             }
@@ -109,26 +112,30 @@ public class Prueba {
         for (int i = 0; i < expensesList.length -1; i++){
             expensesList[i] = expenseTemp[i];
         }
-        expense = category + " Q" + money;
+        expense = category + " Q " + money;
         expensesList[index] = expense;
         index++;
 
+        System.out.println("income: " + TotalIncome);
+        System.out.println("balance: " + balance);
         System.out.println("--------------------------------------");
 
         model.addAttribute("expensesList", expensesList);
         model.addAttribute("categoriesList", namesList);
         model.addAttribute("TotalIncome", TotalIncome);
         model.addAttribute("objectList", objectList);
+        model.addAttribute("balance", balance);
 
     }
 
 
+    static int income;
     public static String TotalIncome;
+    static int Balance;
+    public static String balance;
     public static void Incomes(int IncomeAmount){
-
-        TotalIncome = "Q" + IncomeAmount;
-        
-        System.out.println("income: " + TotalIncome);
+        income = IncomeAmount;
+        TotalIncome = "Q " + IncomeAmount;
 
     }
 
