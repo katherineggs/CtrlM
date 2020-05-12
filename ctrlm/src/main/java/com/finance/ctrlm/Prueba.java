@@ -97,9 +97,6 @@ public class Prueba {
                     timesCounter = objectList[search].Times;
                     timesCounter++;
                     objectList[search].Times = timesCounter;
-
-                    Balance = income - totalMoneyValue;
-                    balance = "Q " + Balance;
                 }
                 System.out.println("\n" + objectList[search].Name + " = " + objectList[search].SpentMoney + ", Times: " + objectList[search].Times);
             }
@@ -115,6 +112,14 @@ public class Prueba {
         expense = category + " Q " + money;
         expensesList[index] = expense;
         index++;
+
+        //Calculate balance
+        int totalExpense = 0;
+        for(int objCant = 0; objCant < objectList.length; objCant++){
+            totalExpense += objectList[objCant].SpentMoney;
+            Balance = income - totalExpense;
+        }
+        balance = "Q " + Balance;
 
         System.out.println("income: " + TotalIncome);
         System.out.println("balance: " + balance);
