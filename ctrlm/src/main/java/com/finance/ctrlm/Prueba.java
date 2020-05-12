@@ -119,23 +119,16 @@ public class Prueba {
         model.addAttribute("categoriesList", namesList);
         model.addAttribute("TotalIncome", TotalIncome);
         model.addAttribute("objectList", objectList);
-        model.addAttribute("Balance", Balance);
 
     }
 
 
     public static String TotalIncome;
-    static int Balance;
-    static String balance;
     public static void Incomes(int IncomeAmount){
 
         TotalIncome = "Q" + IncomeAmount;
-        Balance = IncomeAmount - totalMoneyValue;
-        balance = "Q" + Balance;
-        //Balance = IncomeAmount - lastMoneyValue;
-
+        
         System.out.println("income: " + TotalIncome);
-        System.out.println("Balance: " + Balance);
 
     }
 
