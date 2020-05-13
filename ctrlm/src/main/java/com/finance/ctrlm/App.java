@@ -14,12 +14,17 @@ public class App {
     @GetMapping("index")
     public String index(){
 
+        return "GetUserName";
+    }
+
+    @GetMapping("getusername")
+    public String userName(@RequestParam String UserName){
         return "GetIncome";
     }
 
     @GetMapping("getincome")
-    public String income(@RequestParam int IncomeAmount){
-        Prueba.Incomes(IncomeAmount);
+    public String income(@RequestParam int IncomeAmount, int SavingGoal){
+        Prueba.Incomes(IncomeAmount, SavingGoal);
         return "GetCategories";
     }
 

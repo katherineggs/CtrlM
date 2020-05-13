@@ -133,14 +133,18 @@ public class Prueba {
 
     }
 
-
+    //Income variables
     static int income;
     public static String TotalIncome;
     static int Balance;
     public static String balance;
-    public static void Incomes(int IncomeAmount){
+    //Saving variables
+    static int savingGoal;
+    public static void Incomes(int IncomeAmount, int SavingGoal){
         income = IncomeAmount;
         TotalIncome = "Q " + IncomeAmount;
+
+        savingGoal = SavingGoal;
 
     }
 

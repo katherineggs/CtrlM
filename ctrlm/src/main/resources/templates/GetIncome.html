@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http:/>/www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8"/>
-    <title></title>
+    <title>Income</title>
 
     <!--  CSS  -->
     <link href="../static/css/Style.css" th:href="@{/css/Style.css}" rel="stylesheet" />
@@ -10,15 +10,20 @@
 </head>
 
 <body class="body-categories">
-    <h2>WHAT IS YOUR INCOME?</h2>
-    <div class="box">
+    <h2>WHAT IS YOUR INCOME AND SAVINGS GOAL?</h2>
+    <div class="box" style="overflow: hidden">
         <form action = '/getincome'>
             <div class="input-container">
                 <input autocomplete="off" type="text" th:name="IncomeAmount" /><br>
                 <label>Amount</label>
             </div>
 
-            <button type="submit" value="Done" class="submit-button">Done</button>
+            <div class="input-container">
+                <input autocomplete="off" type="text" th:name="SavingGoal" /><br>
+                <label>Saving Goal</label>
+            </div>
+
+            <button type="submit" value="Done" class="submit-button" style="position: relative; top: 20px">Done</button>
         </form>
     </div>
 

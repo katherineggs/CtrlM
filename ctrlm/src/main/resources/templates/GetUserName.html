@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:/>/www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Profile</title>
+
+    <!--  CSS  -->
+    <link href="../static/css/Style.css" th:href="@{/css/Style.css}" rel="stylesheet" />
+</head>
+
+<body class="body-categories">
+<h2>WHAT USER NAME WOULD YOU LIKE?</h2>
+<div class="box" style="overflow: hidden">
+    <form action = '/getusername'>
+        <div class="input-container">
+            <input autocomplete="off" type="text" th:name="UserName" /><br>
+            <label>User Name</label>
+        </div>
+
+        <button type="submit" value="Done" class="submit-button">Done</button>
+    </form>
+</div>
+
+</body>
+</html>
