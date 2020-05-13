@@ -278,7 +278,7 @@ span a:hover {
     color: #F8ECEC;
     font-size: 20px;
     position: relative;
-    top: -127px;
+    top: -155px;
     left: 260px;
 }
 
@@ -291,12 +291,21 @@ span a:hover {
     left: -9%;
 }
 
+.table-individuals{
+    font-family: "Andale Mono";
+    font-size: 20px;
+    color: #F8ECEC;
+    position: relative;
+    top: -50px;
+    left: -11%;
+}
+
 .div-totalList{
     font-family: "Andale Mono";
     font-size: 20px;
     color: #F8ECEC;
     position: relative;
-    top: -130px;
+    top: -160px;
     left: 72%;
 }
 

@@ -115,9 +115,15 @@ public class Prueba {
 
         //Calculate balance
         int totalExpense = 0;
+        int SubBalance = 0;
         for(int objCant = 0; objCant < objectList.length; objCant++){
             totalExpense += objectList[objCant].SpentMoney;
-            Balance = income - totalExpense;
+            SubBalance = income - totalExpense;
+        }
+
+        for(int j = 0; j < savingsList.length; j++){
+            totalSavings += savingsList[j];
+            Balance = SubBalance - totalSavings;
         }
         balance = "Q " + Balance;
 
@@ -126,6 +132,8 @@ public class Prueba {
         System.out.println("--------------------------------------");
 
         model.addAttribute("expensesList", expensesList);
+        model.addAttribute("totalSavings", totalSavings);
+        model.addAttribute("savingsList", savingsList);
         model.addAttribute("categoriesList", namesList);
         model.addAttribute("TotalIncome", TotalIncome);
         model.addAttribute("objectList", objectList);
@@ -138,13 +146,37 @@ public class Prueba {
     public static String TotalIncome;
     static int Balance;
     public static String balance;
-    //Saving variables
-    static int savingGoal;
-    public static void Incomes(int IncomeAmount, int SavingGoal){
+    public static void Incomes(int IncomeAmount){
         income = IncomeAmount;
         TotalIncome = "Q " + IncomeAmount;
 
-        savingGoal = SavingGoal;
+    }
+
+    static int savingAmount;
+    static int savingsCount = 0;
+    static int index2 = 0;
+    static int[] savingsList = new int[savingAmount];
+    public  static int totalSavings = 0;
+    public static void Saving(int SavingAmount){
+        savingAmount = SavingAmount;
+        int[] savingsTemp;
+        int saving;
+
+        //Expenses List to print
+        savingsCount++;
+        savingsTemp = savingsList;
+        savingsList = new int[savingsCount];
+        for (int i = 0; i < savingsList.length -1; i++){
+            savingsList[i] = savingsTemp[i];
+        }
+        saving = savingAmount;
+        savingsList[index2] = saving;
+        index2++;
+
+        System.out.println("\nPrint Savings List");
+        for(int i = 0; i <savingsList.length; i++){
+            System.out.println(savingsList[i]);
+        }
 
     }
 

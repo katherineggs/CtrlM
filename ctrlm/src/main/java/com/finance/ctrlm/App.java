@@ -17,19 +17,24 @@ public class App {
         return "GetUserName";
     }
 
+    static String userName;
     @GetMapping("getusername")
     public String userName(@RequestParam String UserName){
+        userName = UserName;
         return "GetIncome";
     }
 
     @GetMapping("getincome")
-    public String income(@RequestParam int IncomeAmount, int SavingGoal){
-        Prueba.Incomes(IncomeAmount, SavingGoal);
+    public String income(@RequestParam int IncomeAmount){
+        Prueba.Incomes(IncomeAmount);
         return "GetSaving";
     }
 
+
+    //--------------- WORKING NOW ------------------
     @GetMapping("getsaving")
-    public String saving(@RequestParam int SavingAmount){
+    public String saving(@RequestParam(value = "SavingAmount") int SavingAmount){
+        Prueba.Saving(SavingAmount);
         return "GetCategories";
     }
 
@@ -41,7 +46,7 @@ public class App {
         return "GetExpenses";
     }
 
-
+    //--------------- EXAMPLE ------------------
     @GetMapping("expenses")
     public String inputExpenses(@RequestParam(value = "Categories") String category, @RequestParam(value="amount") int money, Model model){
         Main.Expenses(category, money, model);
