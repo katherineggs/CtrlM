@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:/>/www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Get Saving</title>
+
+    <!--  CSS  -->
+    <link href="../static/css/ExpensesStyle.css" th:href="@{/css/ExpensesStyle.css}" rel="stylesheet" />
+</head>
+
+<body>
+<h2 class="h2-title">HOW MUCH MONEY DO YOU WANT TO SPARE FOR YOUR GOAL?</h2>
+    <div class="div-input">
+        <form action = '/getsaving'>
+            <br><br><label class="label-saving">GTQ:</label>
+            <input class="input-money" autocomplete="off" type="text" th:name="SavingAmount" style="position: relative; top: -10px;"/>
+
+            <br><br><input class="button-add" style="position: relative; top: -40px;" type="submit" value="+"/>
+        </form>
+    </div>
+</body>
+</html>

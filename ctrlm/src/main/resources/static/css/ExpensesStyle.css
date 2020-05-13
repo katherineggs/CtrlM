@@ -1,7 +1,15 @@
 /*GET EXPENSES*/
 body{
-    background: #F8ECEC;
+    background: #DBAB61;
     overflow: hidden;
+}
+
+.h2-title{
+    text-align: center;
+    font-family: "Andale Mono";
+    color: #2c3e50;
+    position: relative;
+    top: 200px;
 }
 
 select{
@@ -23,7 +31,7 @@ select{
 .div-input{
     position:absolute;
     left:50%;
-    top:45%;
+    top:55%;
     height: 90px;
     width: 350px;
     transform: translate(-50%,-50%);
@@ -38,6 +46,14 @@ label{
     font-family: "AppleGothic";
     position: relative;
     top: -50px;
+    left: 45px;
+    color: #F8ECEC;
+}
+
+.label-saving{
+    font-family: "AppleGothic";
+    position: relative;
+    top: -10px;
     left: 45px;
     color: #F8ECEC;
 }

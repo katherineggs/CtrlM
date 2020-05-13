@@ -25,6 +25,11 @@ public class App {
     @GetMapping("getincome")
     public String income(@RequestParam int IncomeAmount, int SavingGoal){
         Prueba.Incomes(IncomeAmount, SavingGoal);
+        return "GetSaving";
+    }
+
+    @GetMapping("getsaving")
+    public String saving(@RequestParam int SavingAmount){
         return "GetCategories";
     }
 
