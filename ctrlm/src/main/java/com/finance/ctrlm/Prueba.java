@@ -130,6 +130,8 @@ public class Prueba {
         System.out.println("income: " + TotalIncome);
         System.out.println("balance: " + balance);
         System.out.println("--------------------------------------");
+        System.out.println("Most " + mostExpend());
+        System.out.println("Least " + leastExpend());
 
         model.addAttribute("expensesList", expensesList);
         model.addAttribute("totalSavings", totalSavings);
@@ -177,7 +179,36 @@ public class Prueba {
         for(int i = 0; i <savingsList.length; i++){
             System.out.println(savingsList[i]);
         }
-
     }
+    public static String mostExpend(){
+        int moneyExpend = 0;
+        String categoryExpend = "";
+        String amount = "";
+        for(int i = 0; i < objectList.length; i++){
+            if(moneyExpend < objectList[i].SpentMoney){
+                categoryExpend = objectList[i].Name;
+                amount = Integer.toString(objectList[i].SpentMoney);
 
+            }
+        }
+        return categoryExpend + amount;
+    }
+    public static String leastExpend(){
+        int moneyExp;
+        String categoryExpend = "";
+        String amount = "";
+        for(int i = 0; i < objectList.length; i++){
+            moneyExp = objectList[i].SpentMoney;
+            for(int b =0; b < objectList.length; b++) {
+                if (moneyExp > objectList[b].SpentMoney) {
+                    categoryExpend = objectList[b].Name;
+                    amount = Integer.toString(objectList[b].SpentMoney);
+                }
+                else {
+                    moneyExp = objectList[b].SpentMoney;
+                }
+            }
+        }
+        return categoryExpend +" "+ amount;
+    }
 }
