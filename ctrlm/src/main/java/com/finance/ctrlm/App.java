@@ -50,7 +50,7 @@ public class App {
     @GetMapping("expenses")
     public String inputExpenses(@RequestParam(value = "Categories") String category, @RequestParam(value="amount") int money, Model model){
         Main.Expenses(category, money, model);
-        CreateFile.fileCreate();
+        //CreateFile.fileCreate();
         return "ShowExpenses";
     }
 

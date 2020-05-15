@@ -1,6 +1,1 @@
-{"User1":"{Income : 8999, 
-	Name : Andrea, 
-		Category2 : {Money Spent 2 : 0, 
-			Category Name 2 : coffee, }, 
-		Category1 : {Category Name 1 : furniture, 
-			Money Spent 1 : 1200, }, }"}
+{"User1":"{Income : 8999, Name : Andrea, Category2 : {Money Spent 2 : 0, Category Name 2 : coffee, }, Category1 : {Category Name 1 : furniture, Money Spent 1 : 1200, }, }"}
