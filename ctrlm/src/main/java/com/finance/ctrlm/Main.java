@@ -3,6 +3,7 @@ package com.finance.ctrlm;
 import org.springframework.ui.Model;
 
 import java.util.Arrays;
+import java.util.PrimitiveIterator;
 
 public class Main {
 
@@ -17,7 +18,11 @@ public class Main {
     }
 
     //NAV BAR
-    
+    public static void newExpense(String category, int money, Model model){
+        model.addAttribute("categoriesList", Prueba.namesList);
+        Prueba.CalculateExpenses(category, money, model);
+
+    }
 
 
 }

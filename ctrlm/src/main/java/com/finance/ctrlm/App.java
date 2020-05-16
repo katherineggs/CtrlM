@@ -49,21 +49,27 @@ public class App {
     //--------------- EXAMPLE ------------------
     @GetMapping("expenses")
     public String inputExpenses(@RequestParam(value = "Categories") String category, @RequestParam(value="amount") int money, Model model){
+        model.addAttribute("expensesList", Prueba.expensesList);
+        model.addAttribute("objectList", Prueba.objectList);
+        //Savings
+        model.addAttribute("totalSavings", Prueba.totalSavings);
+        model.addAttribute("savingsList", Prueba.savingsList);
         Main.Expenses(category, money, model);
-        CreateFile.fileCreate();
+        //CreateFile.fileCreate();
         System.out.println("--------------------------------------");
         return "ShowExpenses";
     }
 
     //------ MENU -------
     @GetMapping("/GetExpenses")
-    public String showExpenses(){
+    public String showExpenses(Model model){
+        model.addAttribute("categoriesList", Prueba.namesList);
 
         return "GetExpenses";
     }
 
     @GetMapping("/GetCategories")
-    public String showCategories(){
+    public String showCategories(Model model){
 
         return "GetCategories";
     }
