@@ -16,5 +16,8 @@ public class Main {
         Prueba.CalculateExpenses(category, money, model);
     }
 
+    //NAV BAR
+    
+
 
 }

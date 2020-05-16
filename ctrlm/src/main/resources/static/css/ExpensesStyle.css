@@ -177,7 +177,7 @@ span.hidden:nth-of-type(4) {
     transition-delay: 0s;
 }
 span a {
-    color: black;
+    color: #F8ECEC;
     text-decoration: none;
     font-size: 16.3636363636px;
     transition: .3s;

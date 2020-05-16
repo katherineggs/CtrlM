@@ -19,6 +19,7 @@ public class Prueba {
         }
     }
 
+    //addCategory variables
     static int size = 0;
     static int contObj = 0;
     static int contNames = 0;
@@ -74,16 +75,19 @@ public class Prueba {
                 System.out.println(namesList[y]);
             }
         }
+        System.out.println("\n");
 
         model.addAttribute("categoriesList", namesList);
     }
 
+    //CalculateExpenses variables
     static int expensesCount = 0;
     static int index = 0;
     static int lastMoneyValue;
     static int totalMoneyValue;
     static int timesCounter;
     static String[] expensesList = new String[expensesCount];
+
     public static void CalculateExpenses(String category, int money, Model model){
         String[] expenseTemp;
         String expense;
@@ -98,7 +102,7 @@ public class Prueba {
                     timesCounter++;
                     objectList[search].Times = timesCounter;
                 }
-                System.out.println("\n" + objectList[search].Name + " = " + objectList[search].SpentMoney + ", Times: " + objectList[search].Times);
+                System.out.println(objectList[search].Name + " = " + objectList[search].SpentMoney + ", Times: " + objectList[search].Times);
             }
         }
 
@@ -127,19 +131,26 @@ public class Prueba {
         }
         balance = "Q " + Balance;
 
-        System.out.println("income: " + TotalIncome);
+        //Prints to see if works
+        System.out.println("\nincome: " + TotalIncome);
         System.out.println("balance: " + balance);
-        System.out.println("--------------------------------------");
-        System.out.println("Most " + mostExpend());
-        System.out.println("Least " + leastExpend());
+        System.out.println("\nMost: " + mostExpend());
+        System.out.println("Least: " + leastExpend());
 
+        //--------------------- Model ------------------------
+        model.addAttribute("categoriesList", namesList);
+        //Income
+        model.addAttribute("TotalIncome", TotalIncome);
+        model.addAttribute("balance", balance);
+        //Expenses
         model.addAttribute("expensesList", expensesList);
+        model.addAttribute("objectList", objectList);
+        //Savings
         model.addAttribute("totalSavings", totalSavings);
         model.addAttribute("savingsList", savingsList);
-        model.addAttribute("categoriesList", namesList);
-        model.addAttribute("TotalIncome", TotalIncome);
-        model.addAttribute("objectList", objectList);
-        model.addAttribute("balance", balance);
+        //Most and Least Expenses
+        model.addAttribute("mostExpend", mostExpend());
+        model.addAttribute("leastExpend", leastExpend());
 
     }
 
@@ -148,17 +159,19 @@ public class Prueba {
     public static String TotalIncome;
     static int Balance;
     public static String balance;
+
     public static void Incomes(int IncomeAmount){
         income = IncomeAmount;
         TotalIncome = "Q " + IncomeAmount;
-
     }
 
+    //Saving variables
     static int savingAmount;
     static int savingsCount = 0;
     static int index2 = 0;
     static int[] savingsList = new int[savingAmount];
     public  static int totalSavings = 0;
+
     public static void Saving(int SavingAmount){
         savingAmount = SavingAmount;
         int[] savingsTemp;
@@ -175,11 +188,14 @@ public class Prueba {
         savingsList[index2] = saving;
         index2++;
 
+        //Prints to see if works
         System.out.println("\nPrint Savings List");
         for(int i = 0; i <savingsList.length; i++){
             System.out.println(savingsList[i]);
         }
     }
+
+
     public static String mostExpend(){
         int moneyExpend = 0;
         String categoryExpend = "";
@@ -191,8 +207,10 @@ public class Prueba {
 
             }
         }
-        return categoryExpend + amount;
+        return categoryExpend + " Q" + amount;
     }
+
+
     public static String leastExpend(){
         int moneyExp;
         String categoryExpend = "";
@@ -209,6 +227,6 @@ public class Prueba {
                 }
             }
         }
-        return categoryExpend +" "+ amount;
+        return categoryExpend + " Q" + amount;
     }
 }
