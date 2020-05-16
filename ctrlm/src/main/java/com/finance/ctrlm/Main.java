@@ -10,7 +10,6 @@ public class Main {
     //Method to add a new category and create the object
     public static void NewCategory(String name, Model model){
         Prueba.addCategory(name, model);
-
     }
 
     public static void Expenses(String category, int money, Model model){
@@ -19,7 +18,6 @@ public class Main {
 
     //NAV BAR
     public static void newExpense(String category, int money, Model model){
-        model.addAttribute("categoriesList", Prueba.namesList);
         Prueba.CalculateExpenses(category, money, model);
 
     }

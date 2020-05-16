@@ -41,7 +41,6 @@ public class App {
     //Expenses
     @GetMapping("getcategories")
     public String Add(@RequestParam String name, Model model){
-        model.addAttribute("objectList", Prueba.objectList);
         Main.NewCategory(name, model);
 
         return "GetExpenses";
