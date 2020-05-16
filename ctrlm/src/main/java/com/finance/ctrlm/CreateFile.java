@@ -4,6 +4,12 @@
 //import java.io.FileWriter;
 //import java.io.IOException;
 //
+//import java.io.FileNotFoundException;
+//import java.io.FileReader;
+//import org.json.simple.JSONObject;
+//import org.json.simple.parser.JSONParser;
+//import org.json.simple.parser.ParseException;
+//
 //public class CreateFile {
 //    public static void fileCreate() {
 //        //Creating a JSONObject object
@@ -35,4 +41,30 @@
 //        }
 //        System.out.println("JSON file created: " + jsonObject);
 //    }
+//
+//    public static void readJson(){
+//        JSONParser parser = new JSONParser();
+//        try{
+//            Object obj = parser.parse(new FileReader("C:\\Users\\andreareyes\\Desktop\\estructuras\\CtrlM\\JSON\\file.txt"));
+//
+//            JSONObject jsonObject = (JSONObject) obj;
+//
+//            String User1 = (String) jsonObject.get("User1");
+//            System.out.println("Data Json: " + User1);
+//
+////            // recorrer arreglo
+////            JSONArray leng= (JSONArray) jsonObject.get("lenguajes_favoritos");
+////            System.out.println("lenguajes_favoritos:");
+////            Iterator iterator =leng.iterator();
+////            while (iterator.hasNext()) {
+////                System.out.println(iterator.next());
+////            }
+//
+//        }catch(Exception ex){
+//            System.err.println("Error ");
+//        }finally{
+//
+//        }
+//    }
+//
 //}

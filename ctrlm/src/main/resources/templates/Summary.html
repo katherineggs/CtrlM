@@ -5,9 +5,24 @@
     <title>Summary</title>
 
     <!--  CSS  -->
-    <link href="../static/css/ExpensesStyle.css" th:href="@{/css/SummaryStyle.css}" rel="stylesheet" />
+    <link href="../static/css/SummaryStyle.css" th:href="@{/css/SummaryStyle.css}" rel="stylesheet" />
 </head>
+
 <body>
+    <h2 class="expenses-h2">SUMMARY</h2>
+    <img th:src="@{/images/grafica1.png}" class="img-1"/>
+
+    <div>
+        <h2 class="h2-totalsQ">Q 2000</h2>
+        <h2 class="h2-totals">TOTAL EXPENSES</h2>
+
+        <h2 class="h2-most">MOST EXPEND</h2>
+        <span th:text="${mostExpend}" class="span-mostQ">Q2</span>
+
+        <h2 class="h2-least">LEAST EXPEND</h2>
+        <span th:text="${leastExpend}" class="span-leastQ">Q2</span>
+
+    </div>
 
 </body>
 </html>

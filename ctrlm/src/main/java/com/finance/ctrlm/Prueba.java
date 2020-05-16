@@ -147,9 +147,7 @@ public class Prueba {
         //Savings
         model.addAttribute("totalSavings", totalSavings);
         model.addAttribute("savingsList", savingsList);
-        //Most and Least Expenses
-        model.addAttribute("mostExpend", mostExpend());
-        model.addAttribute("leastExpend", leastExpend());
+
 
     }
 
@@ -229,4 +227,5 @@ public class Prueba {
         }
         return categoryExpend + " Q" + amount;
     }
+
 }

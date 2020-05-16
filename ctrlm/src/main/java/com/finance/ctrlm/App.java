@@ -41,8 +41,8 @@ public class App {
     //Expenses
     @GetMapping("getcategories")
     public String Add(@RequestParam String name, Model model){
+        //CreateFile.readJson();
         Main.NewCategory(name, model);
-
         return "GetExpenses";
     }
 
@@ -54,6 +54,7 @@ public class App {
         //Savings
         model.addAttribute("totalSavings", Prueba.totalSavings);
         model.addAttribute("savingsList", Prueba.savingsList);
+
         Main.Expenses(category, money, model);
         //CreateFile.fileCreate();
         System.out.println("--------------------------------------");
@@ -71,6 +72,14 @@ public class App {
     @GetMapping("/GetCategories")
     public String showCategories(Model model){
         return "GetCategories";
+    }
+
+    @GetMapping("/Summary")
+    public String Summary(Model model){
+        //Most and Least Expenses
+        model.addAttribute("mostExpend", Prueba.mostExpend());
+        model.addAttribute("leastExpend", Prueba.leastExpend());
+        return "Summary";
     }
 
 }

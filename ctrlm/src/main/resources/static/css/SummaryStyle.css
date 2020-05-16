@@ -1,0 +1,92 @@
+body{
+    background: #6C8685;
+    min-height:100vh;
+    font-family: 'Noto Sans', sans-serif;
+    overflow: hidden;
+}
+
+h2{
+    text-align: center;
+    font-family: "Andale Mono";
+    color: #F8ECEC;
+    position: relative;
+    top: 80px;
+}
+
+.img-1{
+    position: relative;
+    top: 180px;
+    left: 63%;
+    height: 300px;
+    width: 300px;
+}
+
+div{
+    position:absolute;
+    left:25%;
+    top:57%;
+    height: 350px;
+    width: 350px;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0, 0, 0, 0.89);
+    opacity: 0.90;
+    border-radius:6px;
+    padding:70px 100px;
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.h2-totals{
+    text-align: center;
+    font-family: "Andale Mono";
+    font-size: 18px;
+    color: #F8ECEC;
+    position: relative;
+    top: -45px;
+}
+
+.h2-totalsQ{
+    text-align: center;
+    font-family: "Andale Mono";
+    font-size: 25px;
+    color: #F8ECEC;
+    position: relative;
+    top: -40px;
+}
+
+.h2-most{
+    font-family: "Andale Mono";
+    font-size: 18px;
+    color: #F8ECEC;
+    position: relative;
+    top: 20px;
+    left: -140px;
+}
+
+.span-mostQ{
+    font-family: "Andale Mono";
+    font-size: 25px;
+    color: #F8ECEC;
+    position: relative;
+    top: 20px;
+    left: -20px;
+}
+
+.h2-least{
+    font-family: "Andale Mono";
+    font-size: 18px;
+    color: #F8ECEC;
+    position: relative;
+    top: -57px;
+    left: 120px;
+}
+
+.span-leastQ{
+    font-family: "Andale Mono";
+    font-size: 25px;
+    color: #F8ECEC;
+    position: relative;
+    top: -57px;
+    left: 230px;
+}
