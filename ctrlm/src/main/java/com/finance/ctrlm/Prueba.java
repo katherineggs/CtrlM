@@ -126,7 +126,6 @@ public class Prueba {
         }
 
         for(int j = 0; j < savingsList.length; j++){
-            totalSavings += savingsList[j];
             Balance = SubBalance - totalSavings;
         }
         balance = "Q " + Balance;
@@ -169,15 +168,16 @@ public class Prueba {
     static int savingAmount;
     static int savingsCount = 0;
     static int index2 = 0;
-    static int[] savingsList = new int[savingAmount];
+    static int[] savingsList = new int[savingsCount];
     public  static int totalSavings = 0;
 
     public static void Saving(int SavingAmount){
         savingAmount = SavingAmount;
+        totalSavings = totalSavings + savingAmount;
         int[] savingsTemp;
         int saving;
 
-        //Expenses List to print
+        //Savings List to print
         savingsCount++;
         savingsTemp = savingsList;
         savingsList = new int[savingsCount];

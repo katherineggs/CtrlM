@@ -41,6 +41,7 @@ public class App {
     //Expenses
     @GetMapping("getcategories")
     public String Add(@RequestParam String name, Model model){
+
         Main.NewCategory(name, model);
 
         return "GetExpenses";
