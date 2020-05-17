@@ -99,7 +99,6 @@ public class Prueba {
     static int totalMoneyValue;
     static int timesCounter;
     static String[] expensesList = new String[expensesCount];
-    static int[] spentMoney;
 
     public static void CalculateExpenses(String category, int money, Model model){
         String[] expenseTemp;
@@ -153,9 +152,10 @@ public class Prueba {
         //money spent
         model.addAttribute("spentmoney",spentMoney);
 
-
     }
 
+    static int[] spentMoney;
+    static int TotalExpenses;
     public static void CalculateBalance(){
         //Calculate balance
         int totalExpense = 0;
@@ -165,12 +165,19 @@ public class Prueba {
             totalExpense += objectList[objCant].SpentMoney;
             SubBalance = income - totalExpense;
             spentMoney[objCant] = objectList[objCant].SpentMoney;
+            TotalExpenses = (TotalExpenses + objectList[objCant].SpentMoney)-10;
         }
 
         for(int j = 0; j < savingsList.length; j++){
             Balance = SubBalance - totalSavings;
         }
         balance = "Q " + Balance;
+
+        System.out.println("Totals list: ");
+        for(int exp = 0; exp < spentMoney.length; exp++){
+            System.out.println(spentMoney[exp]);
+        }
+        System.out.println("Total expenses: " + TotalExpenses);
     }
 
     //Income variables

@@ -67,9 +67,30 @@ public class App {
     }
 
     @GetMapping("/GetCategories")
-    public String showCategories(){
+    public String showCategories(Model model){
+        model.addAttribute("categoriesList", Prueba.namesList);
+        //Expenses
+        model.addAttribute("expensesList", Prueba.expensesList);
+        model.addAttribute("objectList", Prueba.objectList);
+        return "GetNewCategory";
+    }
 
-        return "GetCategories";
+    @GetMapping("/GetNewCategory")
+    public String getNewCategory(@RequestParam String name, Model model){
+        Main.NewCategory(name, model);
+
+        model.addAttribute("categoriesList", Prueba.namesList);
+        //Expenses
+        model.addAttribute("expensesList", Prueba.expensesList);
+        model.addAttribute("objectList", Prueba.objectList);
+        //Income
+        model.addAttribute("TotalIncome", Prueba.TotalIncome);
+        model.addAttribute("balance", Prueba.balance);
+        //Savings
+        model.addAttribute("totalSavings", Prueba.totalSavings);
+        model.addAttribute("savingsList", Prueba.savingsList);
+        model.addAttribute("SavingGoal", Prueba.savingAmount);
+        return "ShowExpenses";
     }
 
     @GetMapping("/GetSaving")
@@ -83,6 +104,7 @@ public class App {
     public String getNewSaving(@RequestParam(value = "SavingAmount") int SavingAmount, Model model){
         Prueba.Saving(SavingAmount);
         Prueba.CalculateBalance();
+
         //Expenses
         model.addAttribute("expensesList", Prueba.expensesList);
         model.addAttribute("objectList", Prueba.objectList);
@@ -107,6 +129,7 @@ public class App {
         model.addAttribute("SavingGoal", Prueba.goal);
         model.addAttribute("totalSavings", Prueba.totalSavings);
         model.addAttribute("spentmoney",Prueba.spentMoney);
+        model.addAttribute("TotalExpenses",Prueba.TotalExpenses);
         return "Summary";
     }
 
