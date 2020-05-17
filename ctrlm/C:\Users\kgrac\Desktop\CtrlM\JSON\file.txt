@@ -1,1 +1,0 @@
-{"User1":"{Total Savings : 20, Income : Q 100, Saving Goal : 10, Name : maria, Category2 : {Money Spent 2 : 30, Times Spent 2 : 1, Category Name 2 : home, }, Category1 : {Times Spent 1 : 1, Category Name 1 : food, Money Spent 1 : 10, }, }"}

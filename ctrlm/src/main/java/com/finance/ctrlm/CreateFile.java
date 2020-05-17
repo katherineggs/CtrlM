@@ -1,20 +1,42 @@
-//package com.finance.ctrlm;
-//
-//import org.json.simple.JSONObject;
-//import java.io.FileWriter;
-//import java.io.IOException;
-//
-//import java.io.FileNotFoundException;
-//import java.io.FileReader;
-//import org.json.simple.JSONObject;
-//import org.json.simple.parser.JSONParser;
-//import org.json.simple.parser.ParseException;
-//
-//public class CreateFile {
-//    public static void fileCreate() {
-//        //Creating a JSONObject object
-//        JSONObject jsonObject = new JSONObject();
-//        HashMapp<String,String> infoUser = new HashMapp<>();
+package com.finance.ctrlm;
+
+import org.apache.tomcat.jni.File;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
+import java.awt.print.PrinterException;
+import java.io.*;
+
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+import javax.naming.Name;
+
+public class CreateFile {
+    static HashMapp<String,String> infoUser = new HashMapp<>();
+    static JSONObject UserInfo = new JSONObject();
+    static JSONObject CategoriesInfo = new JSONObject();
+    public static void fileCreate() {
+        //Creating a JSONObject object
+        UserInfo.put("Name", App.userName);
+        UserInfo.put("Income", Prueba.income);
+        UserInfo.put("SavingGoal", Prueba.savingAmount);
+        UserInfo.put("TotalSavings", Prueba.totalSavings);
+
+        for(int i = 0; i < Prueba.objectList.length; i++){
+            CategoriesInfo.put("CategoryName" + (i+1), Prueba.objectList[i].Name);
+            CategoriesInfo.put("Times" + (i+1), Prueba.objectList[i].Times);
+            CategoriesInfo.put("SpentMoney" + (i+1), Prueba.objectList[i].SpentMoney);
+        }
+        UserInfo.put("Categories", CategoriesInfo);
+
+
 //        infoUser.Put("Name", App.userName);
 //        infoUser.Put("Income", (Prueba.TotalIncome));
 //        infoUser.Put("Saving Goal",Integer.toString(Prueba.savingAmount));
@@ -28,43 +50,46 @@
 //        }
 //
 //        jsonObject.put("User1", infoUser.toString());
-//
-//        try {
-//            //"C:\\Users\\andreareyes\\Desktop\\estructuras\\CtrlM\\JSON\\file.txt"
-//            //"C:\\Users\\kgrac\\Desktop\\CtrlM\\JSON\\file.txt"
-//            FileWriter file = new FileWriter("C:\\Users\\andreareyes\\Desktop\\estructuras\\CtrlM\\JSON\\file.txt");
-//            file.write(jsonObject.toJSONString());
-//            file.close();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//            System.out.println("hola");
-//        }
-//        System.out.println("JSON file created: " + jsonObject);
-//    }
-//
-//    public static void readJson(){
-//        JSONParser parser = new JSONParser();
-//        try{
-//            Object obj = parser.parse(new FileReader("C:\\Users\\andreareyes\\Desktop\\estructuras\\CtrlM\\JSON\\file.txt"));
-//
-//            JSONObject jsonObject = (JSONObject) obj;
-//
-//            String User1 = (String) jsonObject.get("User1");
-//            System.out.println("Data Json: " + User1);
-//
-////            // recorrer arreglo
-////            JSONArray leng= (JSONArray) jsonObject.get("lenguajes_favoritos");
-////            System.out.println("lenguajes_favoritos:");
-////            Iterator iterator =leng.iterator();
-////            while (iterator.hasNext()) {
-////                System.out.println(iterator.next());
-////            }
-//
-//        }catch(Exception ex){
-//            System.err.println("Error ");
-//        }finally{
-//
-//        }
-//    }
-//
-//}
+
+        try {
+            FileWriter file = new FileWriter("C:\\Users\\andreareyes\\Desktop\\estructuras\\CtrlM\\JSON\\user1.json");
+            file.write(UserInfo.toJSONString());
+            file.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("JSON file created: " + UserInfo);
+    }
+
+
+
+    public static void readJson(){
+        JSONParser parser = new JSONParser();
+        try{
+//            String Name = infoUser.Get("Name");
+//            System.out.println(Name);
+
+
+            Object obj = parser.parse(new FileReader("C:\\Users\\andreareyes\\Desktop\\estructuras\\CtrlM\\JSON\\file.json"));
+
+            JSONObject jsonObject = (JSONObject) obj;
+            String Name = (String) UserInfo.get("Name");
+            System.out.println("Data Json: " + Name);
+
+//            // recorrer arreglo
+//            JSONArray leng= (JSONArray) jsonObject.get("lenguajes_favoritos");
+//            System.out.println("lenguajes_favoritos:");
+//            Iterator iterator =leng.iterator();
+//            while (iterator.hasNext()) {
+//                System.out.println(iterator.next());
+//            }
+
+        }catch(Exception ex){
+            System.err.println("Error: "+ex.toString());
+        }finally{
+
+        }
+    }
+
+}

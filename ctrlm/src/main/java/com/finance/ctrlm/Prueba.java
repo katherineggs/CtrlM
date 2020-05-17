@@ -2,6 +2,8 @@ package com.finance.ctrlm;
 
 import org.springframework.ui.Model;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.HashMap;
@@ -28,6 +30,16 @@ public class Prueba {
     static boolean repeated;
 
     public static void addCategory(String name, Model model){
+        try{
+            BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\andreareyes\\Desktop\\estructuras\\CtrlM\\JSON\\file.json"));
+            if (br.readLine() == null) {
+                System.out.println("No errors, and file empty");
+            }
+
+        }catch(Exception ex){
+            System.err.println("Error: "+ex.toString());
+        }
+
         repeated = false;
         String[] categoriesList = name.split(",");
         size += categoriesList.length   ;

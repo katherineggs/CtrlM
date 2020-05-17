@@ -13,7 +13,7 @@ public class App {
     //First page = Get income
     @GetMapping("index")
     public String index(){
-
+        CreateFile.fileCreate();
         return "GetUserName";
     }
 
@@ -41,7 +41,6 @@ public class App {
     //Expenses
     @GetMapping("getcategories")
     public String Add(@RequestParam String name, Model model){
-        //CreateFile.readJson();
         Main.NewCategory(name, model);
         return "GetExpenses";
     }
@@ -56,7 +55,8 @@ public class App {
         model.addAttribute("savingsList", Prueba.savingsList);
 
         Main.Expenses(category, money, model);
-        //CreateFile.fileCreate();
+        CreateFile.fileCreate();
+        //CreateFile.readJson();
         System.out.println("--------------------------------------");
         return "ShowExpenses";
     }
