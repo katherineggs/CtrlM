@@ -30,15 +30,15 @@ public class Prueba {
     static boolean repeated;
 
     public static void addCategory(String name, Model model){
-        try{
-            BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\andreareyes\\Desktop\\estructuras\\CtrlM\\JSON\\file.json"));
-            if (br.readLine() == null) {
-                System.out.println("No errors, and file empty");
-            }
-
-        }catch(Exception ex){
-            System.err.println("Error: "+ex.toString());
-        }
+//        try{
+//            BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\andreareyes\\Desktop\\estructuras\\CtrlM\\JSON\\file.json"));
+//            if (br.readLine() == null) {
+//                System.out.println("No errors, and file empty");
+//            }
+//
+//        }catch(Exception ex){
+//            System.err.println("Error: "+ex.toString());
+//        }
 
         repeated = false;
         String[] categoriesList = name.split(",");
