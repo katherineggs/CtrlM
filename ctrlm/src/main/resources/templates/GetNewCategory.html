@@ -2,9 +2,49 @@
 <html lang="en" xmlns:th="http:/>/www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8"/>
-    <title></title>
-</head>
-<body>
+    <title>Categories</title>
 
+    <!--  JQUERY  -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+    <!--  CSS  -->
+    <link href="../static/css/Style.css" th:href="@{/css/Style.css}" rel="stylesheet" />
+
+
+</head>
+
+<body class="body-categories">
+    <h2>CREATE YOUR CATEGORIES</h2>
+    <div class="box">
+        <form action = '/GetNewCategory'>
+
+            <div id="items">
+                <div class="input-container">
+                    <input autocomplete="off" type="text" name="name" /><br>
+                    <label>Category Name</label>
+                </div>
+            </div>
+
+            <button type="submit" value="Done" class="submit-button">Done</button>
+
+        </form>
+
+        <div class="wrapper-add">
+            <button id="add" class="add-button">+</button>
+        </div>
+    </div>
+
+    <!--    add new category field-->
+    <script>
+        $(document).ready(function() {
+            $("#add").click(function (e) {
+                //Append a new row of code to the "#items" div
+                $("#items").append('<div class="input-container">\n' +
+                    '                    <input autocomplete="off" type="text" name="name" /><br>\n' +
+                    '                    <label>Category Name</label>\n' +
+                    '                </div>'); });
+        });
+
+    </script>
 </body>
 </html>
