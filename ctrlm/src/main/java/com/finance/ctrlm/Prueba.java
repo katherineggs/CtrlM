@@ -159,27 +159,30 @@ public class Prueba {
         //Savings
         model.addAttribute("totalSavings", totalSavings);
         model.addAttribute("savingsList", savingsList);
+        model.addAttribute("SavingGoal", savingAmount);
 
 
     }
 
     //Income variables
     static int income;
+    static int goal;
     public static String TotalIncome;
     static int Balance;
     public static String balance;
 
-    public static void Incomes(int IncomeAmount){
+    public static void Incomes(int IncomeAmount, int SavingGoal){
         income = IncomeAmount;
+        goal = SavingGoal;
         TotalIncome = "Q " + IncomeAmount;
     }
 
     //Saving variables
-    static int savingAmount;
+    static int savingAmount = 0;
     static int savingsCount = 0;
     static int index2 = 0;
     static int[] savingsList = new int[savingsCount];
-    public  static int totalSavings = 0;
+    public static int totalSavings = 0;
 
     public static void Saving(int SavingAmount){
         savingAmount = SavingAmount;

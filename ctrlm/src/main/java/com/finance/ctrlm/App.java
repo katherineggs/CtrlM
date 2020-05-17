@@ -25,13 +25,11 @@ public class App {
     }
 
     @GetMapping("getincome")
-    public String income(@RequestParam int IncomeAmount){
-        Prueba.Incomes(IncomeAmount);
+    public String income(@RequestParam int IncomeAmount, int SavingGoal){
+        Prueba.Incomes(IncomeAmount, SavingGoal);
         return "GetSaving";
     }
 
-
-    //--------------- WORKING NOW ------------------
     @GetMapping("getsaving")
     public String saving(@RequestParam(value = "SavingAmount") int SavingAmount){
         Prueba.Saving(SavingAmount);
@@ -45,14 +43,10 @@ public class App {
         return "GetExpenses";
     }
 
-    //--------------- EXAMPLE ------------------
     @GetMapping("expenses")
     public String inputExpenses(@RequestParam(value = "Categories") String category, @RequestParam(value="amount") int money, Model model){
         model.addAttribute("expensesList", Prueba.expensesList);
         model.addAttribute("objectList", Prueba.objectList);
-        //Savings
-        model.addAttribute("totalSavings", Prueba.totalSavings);
-        model.addAttribute("savingsList", Prueba.savingsList);
 
         Main.Expenses(category, money, model);
         CreateFile.fileCreate();
@@ -70,8 +64,14 @@ public class App {
     }
 
     @GetMapping("/GetCategories")
-    public String showCategories(Model model){
+    public String showCategories(){
         return "GetCategories";
+    }
+
+    @GetMapping("/GetSaving")
+    public String GetSavings(Model model){
+        model.addAttribute("totalSavings", Prueba.totalSavings);
+        return "GetSaving";
     }
 
     @GetMapping("/Summary")
@@ -79,6 +79,9 @@ public class App {
         //Most and Least Expenses
         model.addAttribute("mostExpend", Prueba.mostExpend());
         model.addAttribute("leastExpend", Prueba.leastExpend());
+        model.addAttribute("SavingGoal", Prueba.goal);
+        model.addAttribute("totalSavings", Prueba.totalSavings);
+        model.addAttribute("objectList", Prueba.objectList);
         return "Summary";
     }
 

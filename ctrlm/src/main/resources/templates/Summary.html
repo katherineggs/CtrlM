@@ -6,11 +6,17 @@
 
     <!--  CSS  -->
     <link href="../static/css/SummaryStyle.css" th:href="@{/css/SummaryStyle.css}" rel="stylesheet" />
+
+    <!--  JQUERY  -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
 </head>
 
 <body>
     <h2 class="expenses-h2">SUMMARY</h2>
-    <img th:src="@{/images/grafica1.png}" class="img-1"/>
+<!--    <img th:src="@{/images/grafica1.png}" class="img-1"/>-->
 
     <div>
         <h2 class="h2-totalsQ">Q 2000</h2>
@@ -22,7 +28,31 @@
         <h2 class="h2-least">LEAST EXPEND</h2>
         <span th:text="${leastExpend}" class="span-leastQ">Q2</span>
 
+        <h2 class="h2-most">SAVING GOAL</h2>
+        <span th:text="${SavingGoal}" class="span-mostQ">Q2</span>
+
+        <h2 class="h2-least">TOTAL SAVINGS</h2>
+        <span th:text="${totalSavings}" class="span-leastQ">Q2</span>
+
     </div>
+
+    <div class="ct-chart ct-perfect-fourth" style="height: 300px; width: 300px; position: relative; top: 340px; left: 900px; background-color: #6C8685"></div>
+    <script type="text/javascript" th:inline="javascript">
+        var d = [[${SavingGoal}]];
+        var totals = []
+
+        new Chartist.Pie('.ct-chart', {
+            series: [d, d,d, d]
+        }, {
+            donut: true,
+            donutWidth: 80,
+            donutSolid: true,
+            startAngle: 270,
+            showLabel: true
+        });
+        new Chartist.Line('.ct-chart', data, options);
+
+    </script>
 
 </body>
 </html>
