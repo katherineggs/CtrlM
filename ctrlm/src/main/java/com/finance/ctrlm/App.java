@@ -68,23 +68,45 @@ public class App {
 
     @GetMapping("/GetCategories")
     public String showCategories(){
+
         return "GetCategories";
     }
 
     @GetMapping("/GetSaving")
     public String GetSavings(Model model){
+        //model.addAttribute("totalSavings", Prueba.totalSavings);
+
+        return "GetNewSaving";
+    }
+
+    @GetMapping("/GetNewSaving")
+    public String getNewSaving(@RequestParam(value = "SavingAmount") int SavingAmount, Model model){
+        Prueba.Saving(SavingAmount);
+        Prueba.CalculateBalance();
+        //Expenses
+        model.addAttribute("expensesList", Prueba.expensesList);
+        model.addAttribute("objectList", Prueba.objectList);
+        //Income
+        model.addAttribute("TotalIncome", Prueba.TotalIncome);
+        model.addAttribute("balance", Prueba.balance);
+        //Savings
         model.addAttribute("totalSavings", Prueba.totalSavings);
-        return "GetSaving";
+        model.addAttribute("savingsList", Prueba.savingsList);
+        model.addAttribute("SavingGoal", Prueba.savingAmount);
+
+        return "ShowExpenses";
     }
 
     @GetMapping("/Summary")
     public String Summary(Model model){
         //Most and Least Expenses
+        model.addAttribute("objectList", Prueba.objectList);
         model.addAttribute("mostExpend", Prueba.mostExpend());
         model.addAttribute("leastExpend", Prueba.leastExpend());
+        //Savings
         model.addAttribute("SavingGoal", Prueba.goal);
         model.addAttribute("totalSavings", Prueba.totalSavings);
-        model.addAttribute("objectList", Prueba.objectList);
+        model.addAttribute("spentmoney",Prueba.spentMoney);
         return "Summary";
     }
 

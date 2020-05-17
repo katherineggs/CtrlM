@@ -99,6 +99,7 @@ public class Prueba {
     static int totalMoneyValue;
     static int timesCounter;
     static String[] expensesList = new String[expensesCount];
+    static int[] spentMoney;
 
     public static void CalculateExpenses(String category, int money, Model model){
         String[] expenseTemp;
@@ -129,18 +130,7 @@ public class Prueba {
         expensesList[index] = expense;
         index++;
 
-        //Calculate balance
-        int totalExpense = 0;
-        int SubBalance = 0;
-        for(int objCant = 0; objCant < objectList.length; objCant++){
-            totalExpense += objectList[objCant].SpentMoney;
-            SubBalance = income - totalExpense;
-        }
-
-        for(int j = 0; j < savingsList.length; j++){
-            Balance = SubBalance - totalSavings;
-        }
-        balance = "Q " + Balance;
+        CalculateBalance();
 
         //Prints to see if works
         System.out.println("\nincome: " + TotalIncome);
@@ -160,8 +150,27 @@ public class Prueba {
         model.addAttribute("totalSavings", totalSavings);
         model.addAttribute("savingsList", savingsList);
         model.addAttribute("SavingGoal", savingAmount);
+        //money spent
+        model.addAttribute("spentmoney",spentMoney);
 
 
+    }
+
+    public static void CalculateBalance(){
+        //Calculate balance
+        int totalExpense = 0;
+        int SubBalance = 0;
+        spentMoney = new int[objectList.length];
+        for(int objCant = 0; objCant < objectList.length; objCant++){
+            totalExpense += objectList[objCant].SpentMoney;
+            SubBalance = income - totalExpense;
+            spentMoney[objCant] = objectList[objCant].SpentMoney;
+        }
+
+        for(int j = 0; j < savingsList.length; j++){
+            Balance = SubBalance - totalSavings;
+        }
+        balance = "Q " + Balance;
     }
 
     //Income variables
