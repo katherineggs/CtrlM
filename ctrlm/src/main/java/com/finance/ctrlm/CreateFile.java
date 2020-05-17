@@ -35,20 +35,6 @@ public class CreateFile {
         infoUser.Put("Categories", infoCategory.toString());
         jsonObject.put("User1", infoUser.toString());
 
-        //Creating with JSONObject object
-//        JSONObject UserInfo = new JSONObject();
-//        JSONObject CategoriesInfo = new JSONObject();
-//        UserInfo.put("Name", App.userName);
-//        UserInfo.put("Income", Prueba.income);
-//        UserInfo.put("SavingGoal", Prueba.savingAmount);
-//        UserInfo.put("TotalSavings", Prueba.totalSavings);
-//        for(int i = 0; i < Prueba.objectList.length; i++){
-//            CategoriesInfo.put("CategoryName" + (i+1), Prueba.objectList[i].Name);
-//            CategoriesInfo.put("Times" + (i+1), Prueba.objectList[i].Times);
-//            CategoriesInfo.put("SpentMoney" + (i+1), Prueba.objectList[i].SpentMoney);
-//        }
-//        UserInfo.put("Categories", CategoriesInfo);
-
         try {
             String name = DateTime.ZonedTimeAndDate()+".json";
             FileWriter file = new FileWriter("\\C:\\Users\\kgrac\\Desktop\\CtrlM\\JSON\\"+name);
@@ -63,42 +49,50 @@ public class CreateFile {
 
 
 
-    public static void readJson(String fileName){
+    public static HashMapp readJson(String fileName){
         JSONParser parser = new JSONParser();
         try{
-//            String Name = infoUser.Get("Name");
-//            System.out.println(Name);
-
             Object obj = parser.parse(new FileReader(fileName));
             JSONObject jsonObject = (JSONObject) obj;
 
             String User1 = (String) jsonObject.get("User1");
             System.out.println("Data Json: " + User1);
             String keyValueT = User1.replaceAll(",",":");
-            String[] keyValue = keyValueT.split(":");
-            int length = Math.floorDiv(keyValue.length,2);
+            String KV = keyValueT.substring(1);
+            String[] keyValue = KV.split(":");
+
+            int length = (keyValue.length);
             String[] Key = new String[length];
             String[] Value = new String[length];
-            for(int i = 1; i < (keyValue.length-1); i = i + 2) {
-                if(Key[i].startsWith("{") || Value[i].startsWith("{")){
-                    i--;
+            int position = 0;
+            for(int i = 0; i < (keyValue.length-1); i = i + 2) {
+                if(keyValue[i+1].startsWith(" {") || keyValue[i].equals(" ") || keyValue[i].startsWith(" }") || keyValue[i+1].startsWith(" [")){
+                    if(keyValue[i+1].startsWith(" [")){
+                        Key[position] = keyValue[i];
+                        Value[position] = keyValue[i + 1] + keyValue[i+2];
+                    }
+                    else {
+                        Key[position] = keyValue[i];
+                        i--;
+                        Value[position] = keyValue[i + 1];
+                    }
+                } else {
+                    Key[position] = keyValue[i];
+                    Value[position] = keyValue[i + 1];
                 }
-                else {
-                    Key[i] = keyValue[i];
-                    Value[i] = keyValue[i + 1];
+                position++;
+            }
+            HashMapp user = new HashMapp();
+            for (int i = 0; i < Key.length; i++){
+                if( !Key[i].startsWith(" }") || !Key[i].startsWith(" ")) {
+                    user.Put(Key[i], Value[i]);
                     System.out.println(Key[i] + ": " + Value[i]);
                 }
             }
-
-////            // recorrer arreglo
-////            JSONArray leng= (JSONArray) jsonObject.get("lenguajes_favoritos");
-////            System.out.println("lenguajes_favoritos:");
-////            Iterator iterator =leng.iterator();
-////            while (iterator.hasNext()) {
-////                System.out.println(iterator.next());
-////            }
+            return user;
         }catch(Exception ex){
-            System.err.println("Error: "+ex.toString());
+            System.err.println("Errorr: "+ex.toString());
+            return null;
         }
     }
 
