@@ -13,7 +13,10 @@ public class App {
     //First page = Get income
     @GetMapping("index")
     public String index(){
-        CreateFile.fileCreate();
+        String path = "C:\\Users\\kgrac\\Desktop\\CtrlM\\JSON\\";
+        String nameFile = CreateFile.lastModified(path);
+        System.out.println(nameFile);
+        CreateFile.readJson(path+nameFile);
         return "GetUserName";
     }
 
