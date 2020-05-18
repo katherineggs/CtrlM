@@ -3,10 +3,12 @@ Aplicación web financiera.
 
 - Katherine García 20190418
 - Andrea Reyes 20190265
+- En nuestra fase final del proyecto, trabajamos en la implementación de un HashMap para el manejo de la creación de archivos JSON. De esta manera, almacenar la información del usuario. Así mismo, reflejamos la informacion del usuario a través de gráficas.
 
 ## CTRL-M APP
 - Carpeta principal 
 - <a href="https://github.com/katherineggs/CtrlM/tree/master/ctrlm">Ctrl-M</a>
+- El archivo "CtrlmApplication.java" es el principal
 
 ## Jmeter 
 - Pruebas de estrés
@@ -19,14 +21,14 @@ Aplicación web financiera.
 ## Estructura de archivo
 - En este proyecto la estructura de archivo a usar es JSON. Se eligió por su similar estructura a un diccionario y creemos que es la mejor manera de manejar nuestra información. 
 [![](https://static.goanywhere.com/images/tutorials/write-json/WriteJsonIlustration4.pngo)]()
+
 ## Avances proyecto Mayo
-- 
+- En nuestra fase final del proyecto, trabajamos en la implementación de un HashMap para el manejo de la creación de archivos JSON. De esta manera, almacenar la información del usuario. Así mismo, reflejamos la informacion del usuario a través de gráficas.
 - Modelamos las categorías de gastos, del usuario, con una clase. Así mismo, almacenamos nuestra colección de objetos en un arreglo.
 - Las operaciones con las que cuenta nuestro proyecto, por el momento, son las necesarias para la funcionalidad escencial de la aplicación. Con esto es posible buscar, leer, mover y modificar, los datos.
 
 ## Ctrl + Money:
-Aplicación web financiera donde se puedan añadir gastos mensuales o semanales y se clasifiquen 
-de acuerdo a categorías y cantidades gastadas. 
+Aplicación web financiera donde se puedan añadir gastos mensuales o semanales y se clasifiquen de acuerdo a categorías y cantidades gastadas. 
 
 ### Propósito de la App:
 **¿Qué problema resolvemos?**
@@ -60,5 +62,3 @@ para alguien externo o para los encargados de su desarrollo.
 - Marzo 18-25: avances de proyecto
 - Abril 6-10:  revisión de requerimientos 
 - Mayo 18: entrega proyecto final.
-*Fechas tentativas*
-
