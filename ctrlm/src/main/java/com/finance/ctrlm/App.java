@@ -19,6 +19,7 @@ public class App {
         String path = File.separator+"Users"+File.separator+"andreareyes"+File.separator+"Desktop"+File.separator+"estructuras"+File.separator+"CtrlM"+File.separator+"JSON";
         String nameFile = CreateFile.lastModified(path);
         System.out.println(nameFile);
+        HashMapp archivo = CreateFile.readJson(path+"/"+nameFile+".json");
         CreateFile.readJson(path+"/"+nameFile+".json");
         return "GetUserName";
     }
