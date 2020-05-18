@@ -10,7 +10,7 @@ h2{
     font-family: "Andale Mono";
     color: #F8ECEC;
     position: relative;
-    top: 80px;
+    top: 60px;
 }
 
 .img-1{
@@ -89,4 +89,13 @@ div{
     position: relative;
     top: -57px;
     left: 230px;
+}
+
+.back{
+    font-family: "Andale Mono";
+    font-size: 45px;
+    color: #F8ECEC;
+    position: relative;
+    top: -37px;
+    left: 50px;
 }

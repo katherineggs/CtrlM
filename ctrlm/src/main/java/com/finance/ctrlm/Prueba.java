@@ -155,7 +155,6 @@ public class Prueba {
     }
 
     static int[] spentMoney;
-    static int TotalExpenses;
     public static void CalculateBalance(){
         //Calculate balance
         int totalExpense = 0;
@@ -165,20 +164,14 @@ public class Prueba {
             totalExpense += objectList[objCant].SpentMoney;
             SubBalance = income - totalExpense;
             spentMoney[objCant] = objectList[objCant].SpentMoney;
-            TotalExpenses = (TotalExpenses + objectList[objCant].SpentMoney)-10;
         }
 
         for(int j = 0; j < savingsList.length; j++){
             Balance = SubBalance - totalSavings;
         }
         balance = "Q " + Balance;
-
-        System.out.println("Totals list: ");
-        for(int exp = 0; exp < spentMoney.length; exp++){
-            System.out.println(spentMoney[exp]);
-        }
-        System.out.println("Total expenses: " + TotalExpenses);
     }
+
 
     //Income variables
     static int income;
@@ -226,37 +219,56 @@ public class Prueba {
 
 
     public static String mostExpend(){
-        int moneyExpend = 0;
+        int most = 0;
         String categoryExpend = "";
         String amount = "";
-        for(int i = 0; i < objectList.length; i++){
-            if(moneyExpend < objectList[i].SpentMoney){
-                categoryExpend = objectList[i].Name;
-                amount = Integer.toString(objectList[i].SpentMoney);
+        for(int seacrh = 0; seacrh < objectList.length; seacrh++){
+            most = objectList[0].SpentMoney;
+        }
 
+        for(int i = 0; i <objectList.length; i++){
+            if(most < objectList[i].SpentMoney)
+            {
+                most = objectList[i].SpentMoney;
+                categoryExpend = objectList[i].Name;
             }
         }
+        amount = Integer.toString(most);
         return categoryExpend + " Q" + amount;
+
     }
 
 
     public static String leastExpend(){
-        int moneyExp;
+        int least = 0;
         String categoryExpend = "";
         String amount = "";
-        for(int i = 0; i < objectList.length; i++){
-            moneyExp = objectList[i].SpentMoney;
-            for(int b =0; b < objectList.length; b++) {
-                if (moneyExp > objectList[b].SpentMoney) {
-                    categoryExpend = objectList[b].Name;
-                    amount = Integer.toString(objectList[b].SpentMoney);
-                }
-                else {
-                    moneyExp = objectList[b].SpentMoney;
-                }
+        for(int seacrh = 0; seacrh < objectList.length; seacrh++){
+            least = objectList[0].SpentMoney;
+        }
+
+        for(int i = 0; i <objectList.length; i++){
+            if(least > objectList[i].SpentMoney)
+            {
+                least = objectList[i].SpentMoney;
+                categoryExpend = objectList[i].Name;
             }
         }
+        amount = Integer.toString(least);
         return categoryExpend + " Q" + amount;
+
+    }
+
+    static int TotalExpenses;
+    public static void Total(){
+        TotalExpenses = 0;
+        System.out.println("Totals list: ");
+        for(int exp = 0; exp < spentMoney.length; exp++){
+            System.out.println(spentMoney[exp]);
+            TotalExpenses += spentMoney[exp];
+        }
+        System.out.println("Total expenses: " + TotalExpenses);
+
     }
 
 }
