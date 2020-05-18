@@ -7,14 +7,11 @@ import static org.junit.jupiter.api.Assertions.*;
 class AppTest {
     @Test
     void index() {
-        assertEquals("food", "food");
-        assertEquals("coffee", "coffee");
-        assertEquals("super", "super");
+        assertEquals(DateTime.yesterday()+".json",CreateFile.lastModified("C:\\Users\\kgrac\\Desktop\\CtrlM\\JSON\\"));
     }
-
     @Test
-    void add() {
-        assertEquals("food", "food");
-        assertEquals(56, 56);
+    void userName() {
+        assertEquals("Andrea", "Andrea");
+        assertEquals("Maria", "Maria");
     }
 }
