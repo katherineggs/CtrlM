@@ -15,44 +15,45 @@
 </head>
 
 <body>
-    <h2 class="expenses-h2">SUMMARY</h2>
+<h2 class="expenses-h2">SUMMARY</h2>
 <!--    <img th:src="@{/images/grafica1.png}" class="img-1"/>-->
 
-    <div>
-        <h2 class="h2-totalsQ" th:text="${TotalExpenses}"></h2>
-        <h2 class="h2-totals">TOTAL EXPENSES</h2>
+<div>
+    <h2 class="h2-totalsQ" th:text="${TotalExpenses}"></h2>
+    <h2 class="h2-totals">TOTAL EXPENSES</h2>
 
-        <h2 class="h2-most">MOST EXPEND</h2>
-        <span th:text="${mostExpend}" class="span-mostQ">Q2</span>
+    <h2 class="h2-most">MOST EXPEND</h2>
+    <span th:text="${mostExpend}" class="span-mostQ">Q2</span>
 
-        <h2 class="h2-least">LEAST EXPEND</h2>
-        <span th:text="${leastExpend}" class="span-leastQ">Q2</span>
+    <h2 class="h2-least">LEAST EXPEND</h2>
+    <span th:text="${leastExpend}" class="span-leastQ">Q2</span>
 
-        <h2 class="h2-most">SAVING GOAL</h2>
-        <span th:text="${SavingGoal}" class="span-mostQ">Q2</span>
+    <h2 class="h2-most">SAVING GOAL</h2>
+    <span th:text="${SavingGoal}" class="span-mostQ">Q2</span>
 
-        <h2 class="h2-least">TOTAL SAVINGS</h2>
-        <span th:text="${totalSavings}" class="span-leastQ">Q2</span>
+    <h2 class="h2-least">TOTAL SAVINGS</h2>
+    <span th:text="${totalSavings}" class="span-leastQ">Q2</span>
 
-    </div>
+</div>
 
-    <div class="ct-chart ct-perfect-fourth" style="height: 300px; width: 300px; position: relative; top: 340px; left: 900px; background-color: #6C8685"></div>
-    <script type="text/javascript" th:inline="javascript">
-        var d = [[${SavingGoal}]];
-        var totals = [[${spentmoney}]]
+<span class="back"><a th:href="@{ShowExp}"> ← </a></span>
 
-        new Chartist.Pie('.ct-chart', {
-            series: totals
-        }, {
-            donut: true,
-            donutWidth: 80,
-            donutSolid: true,
-            startAngle: 270,
-            showLabel: true
-        });
-        new Chartist.Line('.ct-chart', data, options);
+<div class="ct-chart ct-perfect-fourth" style="height: 300px; width: 300px; position: relative; top: 340px; left: 900px; background-color: #6C8685"></div>
+<script type="text/javascript" th:inline="javascript">
+    var totals = [[${spentmoney}]]
 
-    </script>
+    new Chartist.Pie('.ct-chart', {
+        series: totals
+    }, {
+        donut: true,
+        donutWidth: 80,
+        donutSolid: true,
+        startAngle: 270,
+        showLabel: true
+    });
+    new Chartist.Line('.ct-chart', data, options);
+
+</script>
 
 </body>
 </html>

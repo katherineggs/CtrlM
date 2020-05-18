@@ -13,10 +13,10 @@ public class App {
     //First page = Get income
     @GetMapping("index")
     public String index(){
-        String path = "C:\\Users\\kgrac\\Desktop\\CtrlM\\JSON\\";
-        String nameFile = CreateFile.lastModified(path);
-        System.out.println(nameFile);
-        CreateFile.readJson(path+nameFile);
+//        String path = "C:\\Users\\kgrac\\Desktop\\CtrlM\\JSON\\";
+//        String nameFile = CreateFile.lastModified(path);
+//        System.out.println(nameFile);
+//        CreateFile.readJson(path+nameFile);
         return "GetUserName";
     }
 
@@ -121,6 +121,7 @@ public class App {
 
     @GetMapping("/Summary")
     public String Summary(Model model){
+        Prueba.Total();
         //Most and Least Expenses
         model.addAttribute("objectList", Prueba.objectList);
         model.addAttribute("mostExpend", Prueba.mostExpend());
@@ -130,7 +131,25 @@ public class App {
         model.addAttribute("totalSavings", Prueba.totalSavings);
         model.addAttribute("spentmoney",Prueba.spentMoney);
         model.addAttribute("TotalExpenses",Prueba.TotalExpenses);
+
         return "Summary";
     }
 
+    @GetMapping("/ShowExp")
+    public String show(Model model){
+        //Expenses
+        model.addAttribute("expensesList", Prueba.expensesList);
+        model.addAttribute("objectList", Prueba.objectList);
+        //Income
+        model.addAttribute("TotalIncome", Prueba.TotalIncome);
+        model.addAttribute("balance", Prueba.balance);
+        //Savings
+        model.addAttribute("totalSavings", Prueba.totalSavings);
+        model.addAttribute("savingsList", Prueba.savingsList);
+        model.addAttribute("SavingGoal", Prueba.savingAmount);
+
+        return "ShowExpenses";
+    }
+
 }
+
