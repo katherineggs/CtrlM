@@ -7,16 +7,19 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import org.springframework.ui.Model;
 
+import java.io.File;
+
 @Controller
 public class App {
 
     //First page = Get income
     @GetMapping("index")
     public String index(){
-//        String path = "C:\\Users\\kgrac\\Desktop\\CtrlM\\JSON\\";
-//        String nameFile = CreateFile.lastModified(path);
-//        System.out.println(nameFile);
-//        CreateFile.readJson(path+nameFile);
+        //String path = "C:\\Users\\andreareyes\\Desktop\\estructuras\\CtrlM\\JSON";
+        String path = File.separator+"Users"+File.separator+"andreareyes"+File.separator+"Desktop"+File.separator+"estructuras"+File.separator+"CtrlM"+File.separator+"JSON";
+        String nameFile = CreateFile.lastModified(path);
+        System.out.println(nameFile);
+        CreateFile.readJson(path+"/"+nameFile+".json");
         return "GetUserName";
     }
 
@@ -53,7 +56,11 @@ public class App {
 
         Main.Expenses(category, money, model);
         CreateFile.fileCreate();
-        //CreateFile.readJson();
+
+        String path = File.separator+"Users"+File.separator+"andreareyes"+File.separator+"Desktop"+File.separator+"estructuras"+File.separator+"CtrlM"+File.separator+"JSON";
+        String nameFile = DateTime.ZonedTimeAndDate();
+
+        CreateFile.readJson(path+"/"+nameFile+".json");
         System.out.println("--------------------------------------");
         return "ShowExpenses";
     }

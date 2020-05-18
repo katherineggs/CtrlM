@@ -37,7 +37,8 @@ public class CreateFile {
 
         try {
             String name = DateTime.ZonedTimeAndDate()+".json";
-            FileWriter file = new FileWriter("\\C:\\Users\\kgrac\\Desktop\\CtrlM\\JSON\\"+name);
+            String path = File.separator+"Users"+File.separator+"andreareyes"+File.separator+"Desktop"+File.separator+"estructuras"+File.separator+"CtrlM"+File.separator+"JSON/";
+            FileWriter file = new FileWriter(path+"/"+name);
             file.write(jsonObject.toJSONString());
             file.close();
         } catch (IOException e) {
@@ -46,8 +47,6 @@ public class CreateFile {
 
         System.out.println("JSON file created: " + jsonObject);
     }
-
-
 
     public static HashMapp readJson(String fileName){
         JSONParser parser = new JSONParser();
