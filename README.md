@@ -3,7 +3,8 @@ Aplicación web financiera.
 
 - Katherine García 20190418
 - Andrea Reyes 20190265
-- En nuestra fase final del proyecto, trabajamos en la implementación de un HashMap para el manejo de la creación de archivos JSON. De esta manera, almacenar la información del usuario. Así mismo, reflejamos la informacion del usuario a través de gráficas.
+
+En nuestra fase final del proyecto, trabajamos en la implementación de un HashMap para el manejo de la creación de archivos JSON. De esta manera, almacenar la información del usuario. Así mismo, reflejamos la informacion del usuario a través de gráficas.
 
 ## CTRL-M APP
 - Carpeta principal 
