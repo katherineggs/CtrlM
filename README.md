@@ -1,13 +1,26 @@
 # CtrlM
 Aplicación web financiera. 
 
-Katherine García 20190418
-Andrea Reyes 20190265
+- Katherine García 20190418
+- Andrea Reyes 20190265
+
+## CTRL-M APP
+- Carpeta principal 
+- <a href="https://github.com/katherineggs/CtrlM/tree/master/ctrlm">Ctrl-M</a>
+
+## Jmeter 
+- Pruebas de estrés
+- <a href="https://github.com/katherineggs/CtrlM/tree/master/jmeter">JMETER</a>
+
+## JSON
+- carpeta que almacena los archivos JSON ordenados por fecha.
+- <a href="https://github.com/katherineggs/CtrlM/tree/master/JSON">JSON</a>
 
 ## Estructura de archivo
 - En este proyecto la estructura de archivo a usar es JSON. Se eligió por su similar estructura a un diccionario y creemos que es la mejor manera de manejar nuestra información. 
 [![](https://static.goanywhere.com/images/tutorials/write-json/WriteJsonIlustration4.pngo)]()
-## Avances proyecto Abril
+## Avances proyecto Mayo
+- 
 - Modelamos las categorías de gastos, del usuario, con una clase. Así mismo, almacenamos nuestra colección de objetos en un arreglo.
 - Las operaciones con las que cuenta nuestro proyecto, por el momento, son las necesarias para la funcionalidad escencial de la aplicación. Con esto es posible buscar, leer, mover y modificar, los datos.
 
